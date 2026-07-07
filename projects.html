@@ -1,777 +1,683 @@
 <!doctype html>
 
 <html class="dark" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Featured Projects | YANDIAN.TECH</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-      rel="stylesheet"
-    />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "tertiary-fixed-dim": "#ffb77b",
-              "on-secondary-fixed": "#001f28",
-              "surface-variant": "#32353c",
-              "on-primary": "#002d6c",
-              "surface-container-low": "#191b22",
-              "surface-container-highest": "#32353c",
-              "tertiary-container": "#d87802",
-              "surface-container-lowest": "#0b0e15",
-              primary: "#afc6ff",
-              "inverse-surface": "#e1e2ec",
-              "surface-container": "#1d1f27",
-              error: "#ffb4ab",
-              "on-surface": "#e1e2ec",
-              "primary-container": "#528dff",
-              tertiary: "#ffb77b",
-              "on-tertiary-fixed-variant": "#6d3a00",
-              "on-tertiary-container": "#432100",
-              surface: "#11131a",
-              "on-surface-variant": "#c2c6d6",
-              "on-tertiary-fixed": "#2e1500",
-              "secondary-fixed-dim": "#4cd6ff",
-              "inverse-on-surface": "#2e3038",
-              background: "#11131a",
-              "on-error-container": "#ffdad6",
-              "on-secondary-fixed-variant": "#004e60",
-              "surface-container-high": "#272a31",
-              "inverse-primary": "#0059c6",
-              "secondary-container": "#14d1ff",
-              "on-tertiary": "#4d2700",
-              "primary-fixed-dim": "#afc6ff",
-              secondary: "#a6e6ff",
-              "on-error": "#690005",
-              "surface-dim": "#11131a",
-              "on-secondary-container": "#00566b",
-              "on-primary-container": "#00275f",
-              "surface-tint": "#afc6ff",
-              "outline-variant": "#424753",
-              "on-secondary": "#003543",
-              "secondary-fixed": "#b7eaff",
-              "surface-bright": "#373941",
-              outline: "#8c909f",
-              "error-container": "#93000a",
-              "on-background": "#e1e2ec",
-              "on-primary-fixed": "#001a43",
-              "primary-fixed": "#d9e2ff",
-              "tertiary-fixed": "#ffdcc2",
-              "on-primary-fixed-variant": "#004398",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-            spacing: {
-              "section-gap-mobile": "80px",
-              "section-gap-desktop": "160px",
-              "container-max": "1200px",
-              gutter: "24px",
-              unit: "8px",
-            },
-            fontFamily: {
-              "headline-lg": ["Space Grotesk"],
-              "body-md": ["Inter"],
-              "display-lg-mobile": ["Space Grotesk"],
-              "label-md": ["Inter"],
-              "body-lg": ["Inter"],
-              "headline-md": ["Space Grotesk"],
-              "display-lg": ["Space Grotesk"],
-            },
-            fontSize: {
-              "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
-              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
-              "display-lg-mobile": [
-                "40px",
-                { lineHeight: "1.2", fontWeight: "700" },
-              ],
-              "label-md": [
-                "14px",
-                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
-              ],
-              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
-              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "500" }],
-              "display-lg": [
-                "72px",
-                {
-                  lineHeight: "1.1",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "700",
-                },
-              ],
-            },
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Featured Projects | YANDIAN.TECH</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;family=Inter:wght@300..700&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary-fixed-dim": "#ffb77b",
+            "on-secondary-fixed": "#001f28",
+            "surface-variant": "#32353c",
+            "on-primary": "#002d6c",
+            "surface-container-low": "#191b22",
+            "surface-container-highest": "#32353c",
+            "tertiary-container": "#d87802",
+            "surface-container-lowest": "#0b0e15",
+            primary: "#afc6ff",
+            "inverse-surface": "#e1e2ec",
+            "surface-container": "#1d1f27",
+            error: "#ffb4ab",
+            "on-surface": "#e1e2ec",
+            "primary-container": "#528dff",
+            tertiary: "#ffb77b",
+            "on-tertiary-fixed-variant": "#6d3a00",
+            "on-tertiary-container": "#432100",
+            surface: "#11131a",
+            "on-surface-variant": "#c2c6d6",
+            "on-tertiary-fixed": "#2e1500",
+            "secondary-fixed-dim": "#4cd6ff",
+            "inverse-on-surface": "#2e3038",
+            background: "#11131a",
+            "on-error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#004e60",
+            "surface-container-high": "#272a31",
+            "inverse-primary": "#0059c6",
+            "secondary-container": "#14d1ff",
+            "on-tertiary": "#4d2700",
+            "primary-fixed-dim": "#afc6ff",
+            secondary: "#a6e6ff",
+            "on-error": "#690005",
+            "surface-dim": "#11131a",
+            "on-secondary-container": "#00566b",
+            "on-primary-container": "#00275f",
+            "surface-tint": "#afc6ff",
+            "outline-variant": "#424753",
+            "on-secondary": "#003543",
+            "secondary-fixed": "#b7eaff",
+            "surface-bright": "#373941",
+            outline: "#8c909f",
+            "error-container": "#93000a",
+            "on-background": "#e1e2ec",
+            "on-primary-fixed": "#001a43",
+            "primary-fixed": "#d9e2ff",
+            "tertiary-fixed": "#ffdcc2",
+            "on-primary-fixed-variant": "#004398",
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px",
+          },
+          spacing: {
+            "section-gap-mobile": "80px",
+            "section-gap-desktop": "160px",
+            "container-max": "1200px",
+            gutter: "24px",
+            unit: "8px",
+          },
+          fontFamily: {
+            "headline-lg": ["Space Grotesk"],
+            "body-md": ["Inter"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "label-md": ["Inter"],
+            "body-lg": ["Inter"],
+            "headline-md": ["Space Grotesk"],
+            "display-lg": ["Space Grotesk"],
+          },
+          fontSize: {
+            "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+            "display-lg-mobile": [
+              "40px",
+              { lineHeight: "1.2", fontWeight: "700" },
+            ],
+            "label-md": [
+              "14px",
+              { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+            ],
+            "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+            "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "500" }],
+            "display-lg": [
+              "72px",
+              {
+                lineHeight: "1.1",
+                letterSpacing: "-0.02em",
+                fontWeight: "700",
+              },
+            ],
           },
         },
-      };
-    </script>
-    <style>
-      @keyframes revealOnScroll {
-        from {
-          opacity: 0;
-          transform: translateY(30px);
-        }
-        to {
-          opacity: 1;
-          transform: translateY(0);
-        }
-      }
-      .reveal {
-        animation: revealOnScroll linear forwards;
-        animation-timeline: view();
-        animation-range: entry 10% cover 30%;
-      }
-      .glass-card {
-        background: rgba(15, 23, 42, 0.6);
-        backdrop-filter: blur(12px);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .glass-card:hover {
-        border-color: rgba(175, 198, 255, 0.4);
-        box-shadow: 0 0 40px -10px rgba(79, 140, 255, 0.2);
-      }
-      .magnetic-btn {
-        transition: transform 0.2s ease-out;
-      }
-      .filter-pill.active {
-        background: #afc6ff;
-        color: #002d6c;
-      }
-      .project-image-container img {
-        transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-      }
-      .project-card:hover .project-image-container img {
-        transform: scale(1.05);
-      }
-      .glow-orb {
-        filter: blur(80px);
-        opacity: 0.15;
-        z-index: -1;
-      }
-    </style>
-  </head>
-  <body
-    class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container pt-24"
-  >
-    <!-- Navigation Header -->
-    <header
-      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
-      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
-      <nav class="hidden md:flex items-center gap-8">
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="experience.html">Experience</a>
-        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="projects.html">Projects</a>
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#services">Services</a>
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="gallery.html">Gallery</a>
-        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="contact.html">Contact</a>
-      </nav>
-      <div class="flex items-center gap-4">
-        <a href="contact.html"
-          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
-          Let's Talk
-        </a>
-        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
-          <span class="material-symbols-outlined text-[28px]">menu</span>
-        </button>
-      </div>
-    </header>
-
-    <!-- Hero/Portfolio Section Start -->
-    <section
-      class="relative pt-section-gap-desktop overflow-hidden"
-      id="portfolio"
-    >
-      <div
-        class="glow-orb absolute top-0 right-0 w-96 h-96 bg-primary rounded-full"
-      ></div>
-      <div
-        class="glow-orb absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full"
-      ></div>
-      <div class="max-w-container-max mx-auto px-gutter">
-        <!-- Section Title -->
-        <div class="text-center mb-16 space-y-4 reveal">
-          <span
-            class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md text-label-md"
-          >
-            Portfolio
-          </span>
-          <h2
-            class="font-headline-lg text-headline-lg text-on-surface tracking-tight"
-          >
-            Featured Projects
-          </h2>
-          <p
-            class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant"
-          >
-            A curated collection of AI solutions, modern web applications,
-            creative design work, and visual storytelling projects built to
-            solve real-world problems.
-          </p>
-        </div>
-        <!-- Filter Bar -->
-        <div class="flex flex-wrap justify-center gap-4 mb-20 reveal">
-          <button
-            class="filter-pill active px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary"
-            data-filter="all"
-          >
-            All
-          </button>
-          <button
-            class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
-            data-filter="web"
-          >
-            Web
-          </button>
-          <button
-            class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
-            data-filter="ai"
-          >
-            AI
-          </button>
-          <button
-            class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
-            data-filter="fintech"
-          >
-            Fintech
-          </button>
-          <button
-            class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
-            data-filter="marketplace"
-          >
-            Marketplace
-          </button>
-          <button class="filter-pill active bg-primary text-on-primary px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all" data-filter="all">All</button>
-          <button class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant" data-filter="web">Web</button>
-          <button class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant" data-filter="ai">AI</button>
-          <button class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant" data-filter="fintech">Fintech</button>
-          <button class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant" data-filter="marketplace">Marketplace</button>
-        </div>
-        <!-- Projects List -->
-        <div
-          class="space-y-section-gap-mobile md:space-y-32 mb-section-gap-desktop"
-        >
-          <!-- Project 1: Nexora Labs -->
-          <div
-            class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
-            data-category="ai,web"
-          >
-            <div
-              class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative"
-            >
-              <div class="absolute top-4 left-4 z-10">
-                <span
-                  class="px-3 py-1 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center gap-2"
-                >
-                  <span class="material-symbols-outlined text-[14px]">star</span>
-                  Featured Project
-                </span>
-              </div>
-              <img
-                class="w-full aspect-[16/10] object-cover"
-                data-alt="Nexora Labs transforms ideas into intelligent digital experiences. Nexora Labs leverages frontier AI and premium engineering to craft high-performance digital ecosystems for visionary global brands."
-                src="assets/img/nexoraprojects.png"
-              />
-            </div>
-            <div class="lg:col-span-5 space-y-6">
-              <div class="space-y-2">
-                <p
-                  class="text-primary font-label-md text-label-md uppercase tracking-widest"
-                >
-                  AI &amp; Web Development
-                </p>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
-                  Nexora Labs
-                </h3>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Transforming ideas into intelligent digital experiences. Nexora Labs leverages frontier AI and premium engineering to craft high-performance digital ecosystems for visionary global brands.
-              </p>
-              <div
-                class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30"
-              >
-                <div>
-                  <p class="text-primary font-bold text-headline-md">99.9%</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Uptime
-                  </p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-headline-md">10x</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Performance
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >HTML</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >WebGL</span
-                >
-              </div>
-              <div class="flex gap-4 pt-4">
-                <a href="https://azispanji24.github.io/Nexora-Company/" target="_blank"
-                  class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
-                >
-                  Visit Website
-                </a>
-                <a href="https://azispanji24.github.io/Nexora-Company/" target="_blank"
-                  class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center"
-                >
-                  <span class="material-symbols-outlined">link</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2: PasarIn -->
-          <div
-            class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
-            data-category="web,marketplace"
-          >
-            <div
-              class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative"
-            >
-              <img
-                class="w-full aspect-[16/10] object-cover"
-                data-alt="PasarIn Marketplace Modern Indonesia. PasarIn is a modern digital marketplace platform designed for Indonesian merchants and consumers."
-                src="assets/img/pasarlnprojects.png"
-              />
-            </div>
-            <div class="lg:col-span-5 space-y-6">
-              <div class="space-y-2">
-                <p
-                  class="text-primary font-label-md text-label-md uppercase tracking-widest"
-                >
-                  Modern Marketplace
-                </p>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
-                  PasarIn
-                </h3>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Marketplace Modern Indonesia. PasarIn is a modern digital marketplace platform designed for Indonesian merchants and consumers, connecting local businesses with a seamless, intuitive shopping interface.
-              </p>
-              <div
-                class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30"
-              >
-                <div>
-                  <p class="text-primary font-bold text-headline-md">100%</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Local Products
-                  </p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-headline-md">Seamless</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Transactions
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >JavaScript</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >Responsive Design</span
-                >
-              </div>
-              <div class="flex gap-4 pt-4">
-                <a href="https://azispanji24.github.io/Pasarln/" target="_blank"
-                  class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
-                >
-                  Visit Website
-                </a>
-                <a href="https://azispanji24.github.io/Pasarln/" target="_blank"
-                  class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center"
-                >
-                  <span class="material-symbols-outlined">link</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3: AuraBank -->
-          <div
-            class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
-            data-category="web,fintech"
-          >
-            <div
-              class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative"
-            >
-              <img
-                class="w-full aspect-[16/10] object-cover"
-                data-alt="AuraBank Indonesia Bank Digital Masa Depan. AuraBank is a next-generation digital banking platform offering secure, fast, and intelligent financial services."
-                src="assets/img/aurabankprojects.png"
-              />
-            </div>
-            <div class="lg:col-span-5 space-y-6">
-              <div class="space-y-2">
-                <p
-                  class="text-primary font-label-md text-label-md uppercase tracking-widest"
-                >
-                  Fintech &amp; Digital Banking
-                </p>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
-                  AuraBank Indonesia
-                </h3>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Bank Digital Masa Depan. AuraBank is a next-generation digital banking platform offering secure, fast, and intelligent financial services with a premium glassmorphic UI.
-              </p>
-              <div
-                class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30"
-              >
-                <div>
-                  <p class="text-primary font-bold text-headline-md">High</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Security
-                  </p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-headline-md">Ethereal</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Aesthetics
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >HTML</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >Interactive Cards</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >JavaScript</span
-                >
-              </div>
-              <div class="flex gap-4 pt-4">
-                <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
-                  class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
-                >
-                  Visit Website
-                </a>
-                <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
-                  class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center"
-                >
-                  <span class="material-symbols-outlined">link</span>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4: Aura Ventures -->
-          <div
-            class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
-            data-category="web,fintech"
-          >
-            <div
-              class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative"
-            >
-              <img
-                class="w-full aspect-[16/10] object-cover"
-                data-alt="Aura Ventures is a high-end tracking dashboard for venture capital investments."
-                src="assets/img/auraventuresprojects.png"
-              />
-            </div>
-            <div class="lg:col-span-5 space-y-6">
-              <div class="space-y-2">
-                <p
-                  class="text-primary font-label-md text-label-md uppercase tracking-widest"
-                >
-                  Investment &amp; Capital
-                </p>
-                <h3 class="font-headline-md text-headline-md text-on-surface">
-                  Aura Ventures
-                </h3>
-              </div>
-              <p class="font-body-md text-body-md text-on-surface-variant">
-                Premium investment portal and venture capital dashboard featuring real-time financial tracking, asset portfolio optimization algorithms, and high-fidelity custom financial visualization interfaces.
-              </p>
-              <div
-                class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30"
-              >
-                <div>
-                  <p class="text-primary font-bold text-headline-md">Realtime</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Analytics
-                  </p>
-                </div>
-                <div>
-                  <p class="text-primary font-bold text-headline-md">Premium</p>
-                  <p
-                    class="text-label-md font-label-md text-on-surface-variant"
-                  >
-                    Dashboard
-                  </p>
-                </div>
-              </div>
-              <div class="flex flex-wrap gap-2">
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >HTML</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >TailwindCSS</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >Charts.js</span
-                >
-                <span
-                  class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface"
-                  >JavaScript</span
-                >
-              </div>
-              <div class="flex gap-4 pt-4">
-                <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
-                  class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center"
-                >
-                  Visit Website
-                </a>
-                <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
-                  class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center"
-                >
-                  <span class="material-symbols-outlined">link</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Closing CTA -->
-    <section class="py-section-gap-desktop relative overflow-hidden">
-      <div class="max-w-container-max mx-auto px-gutter relative z-10">
-        <div
-          class="glass-card p-12 md:p-24 rounded-[40px] text-center border-primary/20 reveal"
-        >
-          <h2 class="font-headline-lg text-headline-lg mb-6 leading-tight">
-            Interested in working together?
-          </h2>
-          <p
-            class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-12"
-          >
-            Let's build intelligent, beautiful, and impactful digital
-            experiences together. Whether you have a specific project or just a
-            seed of an idea, I'm here to help it grow.
-          </p>
-          <div
-            class="flex flex-col sm:flex-row gap-6 justify-center items-center"
-          >
-            <a href="contact.html"
-              class="magnetic-btn px-12 py-5 bg-primary text-on-primary rounded-full font-headline-md text-body-lg font-bold hover:scale-105 shadow-[0_0_30px_-5px_rgba(175,198,255,0.4)] transition-all text-center flex items-center justify-center"
-            >
-              Start a Project
-            </a>
-            <a
-              class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-2 group"
-              href="mailto:hello@portfolio.dev"
-            >
-              Or send an email
-              <span
-                class="material-symbols-outlined group-hover:translate-x-1 transition-transform"
-                >arrow_forward</span
-              >
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- Footer -->
-    <footer
-      class="py-12 border-t border-outline-variant/20 bg-background reveal"
-    >
-      <div
-        class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8"
-      >
-        <div class="space-y-2 text-center md:text-left">
-          <a href="index.html" class="text-label-md font-bold text-primary hover:text-primary/80 transition-colors">YANDIAN.TECH</a>
-          <p class="text-label-md text-on-surface-variant">
-            © 2026 YANDIAN.TECH. Built with Precision &amp; Logic.
-          </p>
-        </div>
-        <div class="flex gap-8">
-          <a
-            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
-            href="#"
-            >Privacy Policy</a
-          >
-          <a
-            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
-            href="#"
-            >Terms of Service</a
-          >
-          <a
-            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
-            href="#"
-            >LinkedIn</a
-          >
-          <a
-            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
-            href="#"
-            >GitHub</a
-          >
-        </div>
-      </div>
-    </footer>
-    <script>
-      // Magnetic Button Effect
-      const btns = document.querySelectorAll(".magnetic-btn");
-      btns.forEach((btn) => {
-        btn.addEventListener("mousemove", (e) => {
-          const position = btn.getBoundingClientRect();
-          const x = e.pageX - position.left - position.width / 2;
-          const y = e.pageY - position.top - position.height / 2;
-          btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
-        });
-        btn.addEventListener("mouseout", () => {
-          btn.style.transform = "translate(0px, 0px)";
-        });
-      });
-
-      // Real dynamic category filter logic
-      const filterPills = document.querySelectorAll(".filter-pill");
-      const projectCards = document.querySelectorAll(".project-card");
-
-      filterPills.forEach((pill) => {
-        pill.addEventListener("click", () => {
-          // Remove active classes from all pills
-          filterPills.forEach((p) => {
-            p.classList.remove("active", "bg-primary", "text-on-primary");
-            p.classList.add("text-on-surface-variant");
-          });
-          // Add active classes to clicked pill
-          pill.classList.add("active", "bg-primary", "text-on-primary");
-          pill.classList.remove("text-on-surface-variant");
-
-          const filterValue = pill.getAttribute("data-filter");
-
-          projectCards.forEach((card) => {
-            const cardCategories = card.getAttribute("data-category") ? card.getAttribute("data-category").split(",") : [];
-            
-            if (filterValue === "all" || cardCategories.includes(filterValue)) {
-              // Show card
-              card.style.display = "";
-              setTimeout(() => {
-                card.style.opacity = "1";
-                card.style.transform = "scale(1) translateY(0)";
-              }, 50);
-            } else {
-              // Hide card
-              card.style.opacity = "0";
-              card.style.transform = "scale(0.95) translateY(10px)";
-              setTimeout(() => {
-                card.style.display = "none";
-              }, 300);
-            }
-          });
-        });
-      });
-
-      // Mobile Menu Logic
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const closeBtn = document.getElementById('mobile-menu-close');
-      const overlay = document.getElementById('mobile-menu-overlay');
-
-      if (menuBtn && overlay) {
-        menuBtn.addEventListener('click', () => {
-          overlay.classList.remove('opacity-0', 'pointer-events-none');
-          overlay.classList.add('opacity-100');
-        });
+      },
+    };
+  </script>
+  <style>
+    @keyframes revealOnScroll {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
       }
 
-      if (closeBtn && overlay) {
-        closeBtn.addEventListener('click', () => {
-          overlay.classList.remove('opacity-100');
-          overlay.classList.add('opacity-0', 'pointer-events-none');
-        });
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
+    }
 
-      // Close mobile menu when a link is clicked
-      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          overlay.classList.remove('opacity-100');
-          overlay.classList.add('opacity-0', 'pointer-events-none');
-        });
-      });
-    </script>
-    
-    <!-- Mobile Navigation Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
-        <span class="material-symbols-outlined text-[36px]">close</span>
-      </button>
-      <nav class="flex flex-col items-center gap-8 text-center">
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
-        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
-      </nav>
-      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+    .reveal {
+      animation: revealOnScroll linear forwards;
+      animation-timeline: view();
+      animation-range: entry 10% cover 30%;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.6);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(175, 198, 255, 0.4);
+      box-shadow: 0 0 40px -10px rgba(79, 140, 255, 0.2);
+    }
+
+    .magnetic-btn {
+      transition: transform 0.2s ease-out;
+    }
+
+    .filter-pill.active {
+      background: #afc6ff;
+      color: #002d6c;
+    }
+
+    .project-image-container img {
+      transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .project-card:hover .project-image-container img {
+      transform: scale(1.05);
+    }
+
+    .glow-orb {
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: -1;
+    }
+  </style>
+</head>
+
+<body class="bg-background text-on-surface selection:bg-primary-container selection:text-on-primary-container pt-24">
+  <!-- Navigation Header -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+    <a href="index.html"
+      class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="index.html">Home</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="index.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="experience.html">Experience</a>
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md"
+        href="projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="index.html#services">Services</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="gallery.html">Gallery</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="contact.html"
+        class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
         Let's Talk
       </a>
+      <button id="mobile-menu-btn"
+        class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        <span class="material-symbols-outlined text-[28px]">menu</span>
+      </button>
     </div>
-  </body>
+  </header>
+
+  <!-- Hero/Portfolio Section Start -->
+  <section class="relative pt-section-gap-desktop overflow-hidden" id="portfolio">
+    <div class="glow-orb absolute top-0 right-0 w-96 h-96 bg-primary rounded-full"></div>
+    <div class="glow-orb absolute bottom-0 left-0 w-96 h-96 bg-secondary rounded-full"></div>
+    <div class="max-w-container-max mx-auto px-gutter">
+      <!-- Section Title -->
+      <div class="text-center mb-16 space-y-4 reveal">
+        <span
+          class="inline-flex items-center px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md text-label-md">
+          Portfolio
+        </span>
+        <h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Featured Projects
+        </h2>
+        <p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant">
+          A curated collection of AI solutions, modern web applications,
+          creative design work, and visual storytelling projects built to
+          solve real-world problems.
+        </p>
+      </div>
+      <!-- Filter Bar -->
+      <div class="flex flex-wrap justify-center gap-4 mb-20 reveal">
+        <button
+          class="filter-pill active px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary"
+          data-filter="all">
+          All
+        </button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="web">
+          Web
+        </button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="ai">
+          AI
+        </button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="fintech">
+          Fintech
+        </button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="marketplace">
+          Marketplace
+        </button>
+        <!-- <button
+          class="filter-pill active bg-primary text-on-primary px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all"
+          data-filter="all">All</button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="web">Web</button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="ai">AI</button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="fintech">Fintech</button>
+        <button
+          class="filter-pill px-6 py-2 rounded-full border border-outline font-label-md text-label-md transition-all hover:border-primary text-on-surface-variant"
+          data-filter="marketplace">Marketplace</button> -->
+      </div>
+      <!-- Projects List -->
+      <div class="space-y-section-gap-mobile md:space-y-32 mb-section-gap-desktop">
+        <!-- Project 1: Nexora Labs -->
+        <div
+          class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
+          data-category="ai,web">
+          <div
+            class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative">
+            <div class="absolute top-4 left-4 z-10">
+              <span
+                class="px-3 py-1 bg-primary text-on-primary rounded-full font-label-md text-label-md flex items-center gap-2">
+                <span class="material-symbols-outlined text-[14px]">star</span>
+                Featured Project
+              </span>
+            </div>
+            <img class="w-full aspect-[16/10] object-cover"
+              data-alt="Nexora Labs transforms ideas into intelligent digital experiences. Nexora Labs leverages frontier AI and premium engineering to craft high-performance digital ecosystems for visionary global brands."
+              src="assets/img/nexoraprojects.png" />
+          </div>
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-2">
+              <p class="text-primary font-label-md text-label-md uppercase tracking-widest">
+                AI &amp; Web Development
+              </p>
+              <h3 class="font-headline-md text-headline-md text-on-surface">
+                Nexora Labs
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Transforming ideas into intelligent digital experiences. Nexora Labs leverages frontier AI and premium
+              engineering to craft high-performance digital ecosystems for visionary global brands.
+            </p>
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30">
+              <div>
+                <p class="text-primary font-bold text-headline-md">99.9%</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Uptime
+                </p>
+              </div>
+              <div>
+                <p class="text-primary font-bold text-headline-md">10x</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Performance
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">HTML</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">JavaScript</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">TailwindCSS</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">WebGL</span>
+            </div>
+            <div class="flex gap-4 pt-4">
+              <a href="https://azispanji24.github.io/Nexora-Company/" target="_blank"
+                class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center">
+                Visit Website
+              </a>
+              <a href="https://azispanji24.github.io/Nexora-Company/" target="_blank"
+                class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined">link</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 2: PasarIn -->
+        <div
+          class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
+          data-category="web,marketplace">
+          <div
+            class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative">
+            <img class="w-full aspect-[16/10] object-cover"
+              data-alt="PasarIn Marketplace Modern Indonesia. PasarIn is a modern digital marketplace platform designed for Indonesian merchants and consumers."
+              src="assets/img/pasarlnprojects.png" />
+          </div>
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-2">
+              <p class="text-primary font-label-md text-label-md uppercase tracking-widest">
+                Modern Marketplace
+              </p>
+              <h3 class="font-headline-md text-headline-md text-on-surface">
+                PasarIn
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Marketplace Modern Indonesia. PasarIn is a modern digital marketplace platform designed for Indonesian
+              merchants and consumers, connecting local businesses with a seamless, intuitive shopping interface.
+            </p>
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30">
+              <div>
+                <p class="text-primary font-bold text-headline-md">100%</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Local Products
+                </p>
+              </div>
+              <div>
+                <p class="text-primary font-bold text-headline-md">Seamless</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Transactions
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">TailwindCSS</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">JavaScript</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">Responsive
+                Design</span>
+            </div>
+            <div class="flex gap-4 pt-4">
+              <a href="https://azispanji24.github.io/Pasarln/" target="_blank"
+                class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center">
+                Visit Website
+              </a>
+              <a href="https://azispanji24.github.io/Pasarln/" target="_blank"
+                class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined">link</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3: AuraBank -->
+        <div
+          class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
+          data-category="web,fintech">
+          <div
+            class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative">
+            <img class="w-full aspect-[16/10] object-cover"
+              data-alt="AuraBank Indonesia Bank Digital Masa Depan. AuraBank is a next-generation digital banking platform offering secure, fast, and intelligent financial services."
+              src="assets/img/aurabankprojects.png" />
+          </div>
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-2">
+              <p class="text-primary font-label-md text-label-md uppercase tracking-widest">
+                Fintech &amp; Digital Banking
+              </p>
+              <h3 class="font-headline-md text-headline-md text-on-surface">
+                AuraBank Indonesia
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Bank Digital Masa Depan. AuraBank is a next-generation digital banking platform offering secure, fast, and
+              intelligent financial services with a premium glassmorphic UI.
+            </p>
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30">
+              <div>
+                <p class="text-primary font-bold text-headline-md">High</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Security
+                </p>
+              </div>
+              <div>
+                <p class="text-primary font-bold text-headline-md">Ethereal</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Aesthetics
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">HTML</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">TailwindCSS</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">Interactive
+                Cards</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">JavaScript</span>
+            </div>
+            <div class="flex gap-4 pt-4">
+              <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
+                class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center">
+                Visit Website
+              </a>
+              <a href="https://azispanji24.github.io/Aura-Bank/" target="_blank"
+                class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined">link</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4: Aura Ventures -->
+        <div
+          class="project-card reveal group relative grid grid-cols-1 lg:grid-cols-12 gap-unit * 8 items-center glass-card p-6 md:p-12 rounded-[24px] transition-all duration-500"
+          data-category="web,fintech">
+          <div
+            class="lg:col-span-7 project-image-container overflow-hidden rounded-[16px] border border-primary/30 relative">
+            <img class="w-full aspect-[16/10] object-cover"
+              data-alt="Aura Ventures is a high-end tracking dashboard for venture capital investments."
+              src="assets/img/auraventuresprojects.png" />
+          </div>
+          <div class="lg:col-span-5 space-y-6">
+            <div class="space-y-2">
+              <p class="text-primary font-label-md text-label-md uppercase tracking-widest">
+                Investment &amp; Capital
+              </p>
+              <h3 class="font-headline-md text-headline-md text-on-surface">
+                Aura Ventures
+              </h3>
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Premium investment portal and venture capital dashboard featuring real-time financial tracking, asset
+              portfolio optimization algorithms, and high-fidelity custom financial visualization interfaces.
+            </p>
+            <div class="grid grid-cols-2 gap-4 py-4 border-y border-outline-variant/30">
+              <div>
+                <p class="text-primary font-bold text-headline-md">Realtime</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Analytics
+                </p>
+              </div>
+              <div>
+                <p class="text-primary font-bold text-headline-md">Premium</p>
+                <p class="text-label-md font-label-md text-on-surface-variant">
+                  Dashboard
+                </p>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2">
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">HTML</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">TailwindCSS</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">Charts.js</span>
+              <span
+                class="px-3 py-1 bg-surface-container-high border border-outline-variant rounded-full text-label-md font-label-md text-on-surface">JavaScript</span>
+            </div>
+            <div class="flex gap-4 pt-4">
+              <a href="https://azispanji24.github.io/Aura-ven-company/" target="_blank"
+                class="magnetic-btn px-8 py-3 bg-primary text-on-primary rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all text-center flex items-center justify-center">
+                Visit Website
+              </a>
+              <a href="https://azispanji24.github.io/Aura-ven-company/" target="_blank"
+                class="magnetic-btn px-4 py-3 border border-outline rounded-full hover:border-primary transition-all flex items-center justify-center">
+                <span class="material-symbols-outlined">link</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Closing CTA -->
+  <section class="py-section-gap-desktop relative overflow-hidden">
+    <div class="max-w-container-max mx-auto px-gutter relative z-10">
+      <div class="glass-card p-12 md:p-24 rounded-[40px] text-center border-primary/20 reveal">
+        <h2 class="font-headline-lg text-headline-lg mb-6 leading-tight">
+          Interested in working together?
+        </h2>
+        <p class="max-w-2xl mx-auto font-body-lg text-body-lg text-on-surface-variant mb-12">
+          Let's build intelligent, beautiful, and impactful digital
+          experiences together. Whether you have a specific project or just a
+          seed of an idea, I'm here to help it grow.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a href="contact.html"
+            class="magnetic-btn px-12 py-5 bg-primary text-on-primary rounded-full font-headline-md text-body-lg font-bold hover:scale-105 shadow-[0_0_30px_-5px_rgba(175,198,255,0.4)] transition-all text-center flex items-center justify-center">
+            Start a Project
+          </a>
+          <a class="font-label-md text-label-md text-on-surface hover:text-primary transition-colors flex items-center gap-2 group"
+            href="mailto:hello@portfolio.dev">
+            Or send an email
+            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer class="py-12 border-t border-outline-variant/20 bg-background reveal">
+    <div class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="space-y-2 text-center md:text-left">
+        <a href="index.html"
+          class="text-label-md font-bold text-primary hover:text-primary/80 transition-colors">YANDIAN.TECH</a>
+        <p class="text-label-md text-on-surface-variant">
+          © 2026 YANDIAN.TECH. Built with Precision &amp; Logic.
+        </p>
+      </div>
+      <div class="flex gap-8">
+        <a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy
+          Policy</a>
+        <a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of
+          Service</a>
+        <a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">LinkedIn</a>
+        <a class="text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">GitHub</a>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Magnetic Button Effect
+    const btns = document.querySelectorAll(".magnetic-btn");
+    btns.forEach((btn) => {
+      btn.addEventListener("mousemove", (e) => {
+        const position = btn.getBoundingClientRect();
+        const x = e.pageX - position.left - position.width / 2;
+        const y = e.pageY - position.top - position.height / 2;
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px)`;
+      });
+      btn.addEventListener("mouseout", () => {
+        btn.style.transform = "translate(0px, 0px)";
+      });
+    });
+
+    // Real dynamic category filter logic
+    const filterPills = document.querySelectorAll(".filter-pill");
+    const projectCards = document.querySelectorAll(".project-card");
+
+    filterPills.forEach((pill) => {
+      pill.addEventListener("click", () => {
+        // Remove active classes from all pills
+        filterPills.forEach((p) => {
+          p.classList.remove("active", "bg-primary", "text-on-primary");
+          p.classList.add("text-on-surface-variant");
+        });
+        // Add active classes to clicked pill
+        pill.classList.add("active", "bg-primary", "text-on-primary");
+        pill.classList.remove("text-on-surface-variant");
+
+        const filterValue = pill.getAttribute("data-filter");
+
+        projectCards.forEach((card) => {
+          const cardCategories = card.getAttribute("data-category") ? card.getAttribute("data-category").split(",") : [];
+
+          if (filterValue === "all" || cardCategories.includes(filterValue)) {
+            // Show card
+            card.style.display = "";
+            setTimeout(() => {
+              card.style.opacity = "1";
+              card.style.transform = "scale(1) translateY(0)";
+            }, 50);
+          } else {
+            // Hide card
+            card.style.opacity = "0";
+            card.style.transform = "scale(0.95) translateY(10px)";
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300);
+          }
+        });
+      });
+    });
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('mobile-menu-overlay');
+
+    if (menuBtn && overlay) {
+      menuBtn.addEventListener('click', () => {
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+      });
+    }
+
+    if (closeBtn && overlay) {
+      closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+      });
+    }
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+      });
+    });
+  </script>
+
+  <!-- Mobile Navigation Menu Overlay -->
+  <div id="mobile-menu-overlay"
+    class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+    <button id="mobile-menu-close"
+      class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+      <span class="material-symbols-outlined text-[36px]">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-8 text-center">
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="index.html">Home</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="index.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="experience.html">Experience</a>
+      <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="index.html#services">Services</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="gallery.html">Gallery</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors"
+        href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html"
+      class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+      Let's Talk
+    </a>
+  </div>
+</body>
+
 </html>
