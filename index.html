@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>YANDIAN.TECH | AI Engineer, Designer &amp; Video Editor</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+    rel="stylesheet">
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "background": "#11131a",
+            "secondary-container": "#14d1ff",
+            "on-primary": "#002d6c",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#424753",
+            "on-tertiary": "#4d2700",
+            "secondary-fixed": "#b7eaff",
+            "inverse-on-surface": "#2e3038",
+            "outline": "#8c909f",
+            "secondary": "#a6e6ff",
+            "error-container": "#93000a",
+            "on-surface-variant": "#c2c6d6",
+            "on-primary-fixed-variant": "#004398",
+            "secondary-fixed-dim": "#4cd6ff",
+            "primary-fixed-dim": "#afc6ff",
+            "error": "#ffb4ab",
+            "inverse-surface": "#e1e2ec",
+            "surface": "#11131a",
+            "tertiary": "#ffb77b",
+            "surface-container-high": "#272a31",
+            "primary": "#afc6ff",
+            "surface-container-lowest": "#0b0e15",
+            "primary-container": "#528dff",
+            "on-secondary-container": "#00566b",
+            "surface-dim": "#11131a",
+            "surface-container-highest": "#32353c",
+            "surface-container-low": "#191b22",
+            "on-primary-fixed": "#001a43",
+            "surface-bright": "#373941",
+            "on-secondary-fixed": "#001f28",
+            "surface-container": "#1d1f27",
+            "on-tertiary-fixed": "#2e1500",
+            "surface-tint": "#afc6ff",
+            "tertiary-fixed": "#ffdcc2",
+            "on-background": "#e1e2ec",
+            "on-tertiary-container": "#432100",
+            "primary-fixed": "#d9e2ff",
+            "tertiary-fixed-dim": "#ffb77b",
+            "on-primary-container": "#00275f",
+            "on-secondary-fixed-variant": "#004e60",
+            "tertiary-container": "#d87802",
+            "surface-variant": "#32353c",
+            "inverse-primary": "#0059c6",
+            "on-error": "#690005",
+            "on-secondary": "#003543",
+            "on-surface": "#e1e2ec",
+            "on-tertiary-fixed-variant": "#6d3a00"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "unit": "8px",
+            "gutter": "24px",
+            "section-gap-mobile": "80px",
+            "section-gap-desktop": "160px",
+            "container-max": "1200px"
+          },
+          "fontFamily": {
+            "headline-md": ["Space Grotesk"],
+            "label-md": ["Inter"],
+            "body-md": ["Inter"],
+            "display-lg": ["Space Grotesk"],
+            "display-lg-mobile": ["Space Grotesk"],
+            "body-lg": ["Inter"],
+            "headline-lg": ["Space Grotesk"]
+          },
+          "fontSize": {
+            "headline-md": ["32px", { "lineHeight": "1.3", "fontWeight": "500" }],
+            "label-md": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+            "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "display-lg": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "display-lg-mobile": ["40px", { "lineHeight": "1.2", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+            "headline-lg": ["48px", { "lineHeight": "1.2", "fontWeight": "600" }]
+          }
+        },
+      },
+    }
+  </script>
+  <style>
+    body {
+      background-color: #050816;
+      color: #e1e2ec;
+      overflow-x: hidden;
+    }
+
+    .glass-card {
+      background: rgba(15, 23, 42, 0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    }
+
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.15;
+      z-index: -1;
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .magnetic-btn {
+      transition: transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    .fade-up.animate-in {
+      animation: fadeUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .delay-1 {
+      animation-delay: 0.1s;
+    }
+
+    .delay-2 {
+      animation-delay: 0.2s;
+    }
+
+    .delay-3 {
+      animation-delay: 0.3s;
+    }
+
+    .delay-4 {
+      animation-delay: 0.4s;
+    }
+
+    .delay-5 {
+      animation-delay: 0.5s;
+    }
+
+    .service-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .service-card:hover {
+      transform: translateY(-8px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(175, 198, 255, 0.3);
+    }
+
+    .gradient-border {
+      position: relative;
+      background: linear-gradient(#11131a, #11131a) padding-box,
+        linear-gradient(to bottom right, rgba(175, 198, 255, 0.5), transparent) border-box;
+      border: 1px solid transparent;
+    }
+
+    .tech-pill {
+      transition: all 0.3s ease;
+    }
+
+    .tech-pill:hover {
+      background: rgba(175, 198, 255, 0.15);
+      box-shadow: 0 0 20px rgba(175, 198, 255, 0.2);
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="antialiased font-body-md text-on-surface">
+  <!-- Global Shader Background -->
+  <div class="fixed inset-0 z-[-2]">
+
+  </div>
+  <!-- Background Glow Orbs -->
+  <div class="glow-orb bg-primary w-[500px] h-[500px] top-[-100px] left-[-100px]"></div>
+  <div class="glow-orb bg-secondary-container w-[400px] h-[400px] bottom-[-50px] right-[-50px]"></div>
+  <!-- Navigation Header -->
+  <header
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+    <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+    <nav class="hidden md:flex items-center gap-8">
+      <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="index.html">Home</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="index.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="experience.html">Experience</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="index.html#services">Services</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="gallery.html">Gallery</a>
+      <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
+        href="contact.html">Contact</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <a href="contact.html"
+        class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+        Let's Talk
+      </a>
+      <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        <span class="material-symbols-outlined text-[28px]">menu</span>
+      </button>
+    </div>
+  </header>
+  <!-- Main Content -->
+  <main class="relative w-full max-w-container-max mx-auto px-gutter">
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center pt-32 md:pt-0">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center w-full">
+        <!-- Left Side: Content -->
+        <div class="md:col-span-7 flex flex-col items-start gap-8 z-10">
+          <div
+            class="fade-up animate-in px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-label-md font-label-md tracking-wider flex items-center gap-2">
+            <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+            AI Engineer • Designer • Video Editor
+          </div>
+          <h1
+            class="fade-up animate-in delay-1 text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface max-w-[90%] leading-[1.1]">
+            Building Intelligent Experiences Through <span class="text-primary">AI</span>, Design &amp; <span
+              class="text-secondary-container">Creativity</span>
+          </h1>
+          <p
+            class="fade-up animate-in delay-2 text-body-lg font-body-lg text-on-surface-variant max-w-[80%] leading-relaxed">
+            A highly skilled creative technologist crafting impactful digital products at the intersection of logic and
+            imagination.
+          </p>
+          <div class="fade-up animate-in delay-3 flex flex-wrap gap-4 pt-4">
+            <a href="projects.html"
+              class="magnetic-btn bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
+              View Projects
+              <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+            </a>
+            <a href="assets/cv/cvyanun.pdf" download="CV_Yandian.pdf"
+              class="magnetic-btn bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-secondary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
+              Download CV
+              <span class="material-symbols-outlined text-[20px]">download</span>
+            </a>
+            <a href="contact.html"
+              class="magnetic-btn glass-card px-8 py-4 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:bg-white/10 transition-all active:scale-95 text-center flex items-center justify-center">
+              Contact Me
+            </a>
+          </div>
+          <!-- Stats Row -->
+          <div
+            class="fade-up animate-in delay-3 grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-outline-variant/20 w-full max-w-xl">
+            <div class="flex flex-col gap-1">
+              <span class="text-headline-md font-headline-md text-on-surface">15+</span>
+              <span class="text-label-md font-label-md text-on-surface-variant">Projects</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-headline-md font-headline-md text-on-surface">3+</span>
+              <span class="text-label-md font-label-md text-on-surface-variant">Years Exp.</span>
+            </div>
+            <div class="flex flex-col gap-1">
+              <span class="text-headline-md font-headline-md text-on-surface">20+</span>
+              <span class="text-label-md font-label-md text-on-surface-variant">Clients</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right Side: Abstract Visual -->
+        <div class="md:col-span-5 relative h-[500px] md:h-[600px] flex items-center justify-center">
+          <div class="relative w-full h-full flex items-center justify-center">
+            <!-- Soft Blue Glow Background -->
+            <div
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[400px] bg-primary/20 blur-[100px] rounded-full z-0">
+            </div>
+
+            <!-- Main Portrait Frame -->
+            <div class="relative z-10 gradient-border p-2 rounded-[40px] animate-float">
+              <div class="glass-card overflow-hidden rounded-[32px] w-[280px] h-[380px] md:w-[320px] md:h-[440px]">
+                <img src="assets/img/yanunfoto.jpeg" alt="Creative Technologist Portrait"
+                  class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+              </div>
+            </div>
+
+            <!-- Floating Expertise Cards -->
+            <!-- AI Card -->
+            <div
+              class="glass-card absolute top-10 -left-4 md:-left-10 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-1 shadow-xl border-white/10">
+              <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-2xl">psychology</span>
+              </div>
+              <span class="font-label-md text-label-md text-on-surface">AI Engineer</span>
+            </div>
+
+            <!-- Design Card -->
+            <div
+              class="glass-card absolute top-1/2 -right-4 md:-right-8 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-3 shadow-xl border-white/10">
+              <div
+                class="w-10 h-10 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+                <span class="material-symbols-outlined text-2xl">palette</span>
+              </div>
+              <span class="font-label-md text-label-md text-on-surface">UI Designer</span>
+            </div>
+
+            <!-- Video Card -->
+            <div
+              class="glass-card absolute bottom-10 -left-2 md:-left-6 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-5 shadow-xl border-white/10">
+              <div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center text-tertiary">
+                <span class="material-symbols-outlined text-2xl">movie</span>
+              </div>
+              <span class="font-label-md text-label-md text-on-surface">Video Editor</span>
+            </div>
+
+            <!-- Code Card -->
+            <div
+              class="glass-card absolute -bottom-4 right-10 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-2 shadow-xl border-white/10">
+              <div class="w-10 h-10 rounded-xl bg-on-surface/10 flex items-center justify-center text-on-surface">
+                <span class="material-symbols-outlined text-2xl">terminal</span>
+              </div>
+              <span class="font-label-md text-label-md text-on-surface">Full Stack</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 1. ABOUT ME SECTION -->
+    <section class="py-section-gap-mobile md:py-section-gap-desktop" id="about">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+        <!-- Left: Premium Illustration -->
+        <div class="relative order-2 md:order-1 h-[500px] flex items-center justify-center">
+          <div class="relative w-full max-w-md h-full flex items-center justify-center animate-float">
+            <div
+              class="glass-card absolute w-72 h-96 rounded-3xl -rotate-6 z-10 bg-gradient-to-br from-white/5 to-white/0 p-8 flex flex-col justify-between">
+              <div class="space-y-4">
+                <div class="w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                  <span class="material-symbols-outlined text-3xl">psychology</span>
+                </div>
+                <div class="h-3 w-3/4 bg-on-surface/10 rounded-full"></div>
+                <div class="h-3 w-1/2 bg-on-surface/10 rounded-full"></div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="h-20 bg-primary/10 rounded-xl"></div>
+                <div class="h-20 bg-secondary-container/10 rounded-xl"></div>
+              </div>
+            </div>
+            <div
+              class="absolute w-72 h-72 border-2 border-dashed border-primary/20 rounded-full animate-[spin_20s_linear_infinite]">
+            </div>
+            <div
+              class="glass-card absolute top-10 right-0 w-32 h-32 rounded-2xl rotate-12 z-20 flex items-center justify-center">
+              <span class="material-symbols-outlined text-secondary-container text-4xl">terminal</span>
+            </div>
+            <div
+              class="glass-card absolute bottom-10 left-0 w-40 h-40 rounded-2xl -rotate-12 z-20 flex items-center justify-center bg-tertiary/10">
+              <span class="material-symbols-outlined text-tertiary text-5xl">video_settings</span>
+            </div>
+          </div>
+        </div>
+        <!-- Right: Content -->
+        <div class="order-1 md:order-2 flex flex-col items-start gap-6">
+          <div
+            class="fade-up px-4 py-1.5 rounded-full border border-secondary-container/30 bg-secondary-container/10 text-secondary-container text-label-md font-label-md animate-in">
+            ABOUT ME
+          </div>
+          <h2 class="fade-up delay-1 text-headline-lg font-headline-lg text-on-surface leading-tight animate-in">
+            Designing Intelligent <span class="text-primary">Digital Experiences</span>
+          </h2>
+          <p class="fade-up delay-2 text-body-lg text-on-surface-variant animate-in">
+            I am a multidisciplinary Creative Technologist dedicated to merging technical excellence with aesthetic
+            precision. My work spans from architecting AI solutions to crafting cinematic visual narratives.
+          </p>
+          <div class="grid grid-cols-1 gap-6 w-full mt-4">
+            <div
+              class="fade-up delay-3 glass-card p-6 rounded-2xl flex items-start gap-4 group hover:bg-white/5 transition-all animate-in">
+              <div
+                class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined">smart_toy</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-on-surface mb-1">AI Development</h3>
+                <p class="text-label-md text-on-surface-variant">Building custom LLM agents and intelligent automation
+                  workflows.</p>
+              </div>
+            </div>
+            <div
+              class="fade-up delay-4 glass-card p-6 rounded-2xl flex items-start gap-4 group hover:bg-white/5 transition-all animate-in">
+              <div
+                class="w-12 h-12 rounded-xl bg-secondary-container/10 flex items-center justify-center text-secondary-container group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined">brush</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-on-surface mb-1">Creative Design</h3>
+                <p class="text-label-md text-on-surface-variant">Modern UI/UX design with a focus on immersive
+                  interactions.</p>
+              </div>
+            </div>
+            <div
+              class="fade-up delay-5 glass-card p-6 rounded-2xl flex items-start gap-4 group hover:bg-white/5 transition-all animate-in">
+              <div
+                class="w-12 h-12 rounded-xl bg-tertiary/10 flex items-center justify-center text-tertiary group-hover:scale-110 transition-transform">
+                <span class="material-symbols-outlined">movie_edit</span>
+              </div>
+              <div>
+                <h3 class="font-bold text-on-surface mb-1">Video Production</h3>
+                <p class="text-label-md text-on-surface-variant">High-impact video editing and motion graphics for
+                  digital brands.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 2. TECH STACK SECTION -->
+    <section class="py-section-gap-mobile md:py-section-gap-desktop">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="fade-up text-headline-lg font-headline-lg text-on-surface mb-4 animate-in">Technology Stack</h2>
+        <p class="fade-up delay-1 text-body-lg text-on-surface-variant animate-in">The tools and frameworks I use to
+          bring complex ideas to life with performance and scale.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+        <!-- AI Stack -->
+        <div class="fade-up delay-1 space-y-6 animate-in">
+          <h3 class="text-primary font-bold tracking-widest text-label-md uppercase">Artificial Intelligence</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-primary/20">OpenAI API</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-primary/20">LangChain</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-primary/20">Python</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-primary/20">TensorFlow</span>
+          </div>
+        </div>
+        <!-- Web Dev -->
+        <div class="fade-up delay-2 space-y-6 animate-in">
+          <h3 class="text-secondary-container font-bold tracking-widest text-label-md uppercase">Web Frontend</h3>
+          <div class="flex flex-wrap gap-3">
+            <span
+              class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-secondary-container/20">React.js</span>
+            <span
+              class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-secondary-container/20">Next.js</span>
+            <span
+              class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-secondary-container/20">Tailwind
+              CSS</span>
+            <span
+              class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-secondary-container/20">TypeScript</span>
+          </div>
+        </div>
+        <!-- Backend -->
+        <div class="fade-up delay-3 space-y-6 animate-in">
+          <h3 class="text-on-surface font-bold tracking-widest text-label-md uppercase">Backend &amp; DB</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-white/10">Node.js</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-white/10">Supabase</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-white/10">PostgreSQL</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-white/10">Firebase</span>
+          </div>
+        </div>
+        <!-- Design -->
+        <div class="fade-up delay-4 space-y-6 animate-in">
+          <h3 class="text-tertiary font-bold tracking-widest text-label-md uppercase">Creative Design</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-tertiary/20">Figma</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-tertiary/20">Photoshop</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-tertiary/20">Spline 3D</span>
+            <span
+              class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-tertiary/20">Illustrator</span>
+          </div>
+        </div>
+        <!-- Video -->
+        <div class="fade-up delay-5 space-y-6 animate-in">
+          <h3 class="text-error font-bold tracking-widest text-label-md uppercase">Video Production</h3>
+          <div class="flex flex-wrap gap-3">
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-error/20">Premiere Pro</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-error/20">After Effects</span>
+            <span class="tech-pill glass-card px-4 py-2 rounded-full text-label-md border-error/20">Davinci
+              Resolve</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- 3. SERVICES SECTION -->
+    <section class="py-section-gap-mobile md:py-section-gap-desktop mb-24" id="services">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="fade-up text-headline-lg font-headline-lg text-on-surface mb-4 animate-in">Premium Services</h2>
+        <p class="fade-up delay-1 text-body-lg text-on-surface-variant animate-in">Bespoke digital solutions tailored
+          for the next generation of web and media.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Service 1 -->
+        <div class="fade-up service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-3xl">auto_awesome</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">AI Development</h3>
+            <p class="text-on-surface-variant text-body-md">Custom AI models and LLM integrations that power smarter
+              user experiences.</p>
+          </div>
+        </div>
+        <!-- Service 2 -->
+        <div class="fade-up delay-1 service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div
+            class="w-14 h-14 rounded-2xl bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+            <span class="material-symbols-outlined text-3xl">bolt</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">AI Automation</h3>
+            <p class="text-on-surface-variant text-body-md">Streamlining business processes with intelligent, automated
+              workflows.</p>
+          </div>
+        </div>
+        <!-- Service 3 -->
+        <div class="fade-up delay-2 service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+            <span class="material-symbols-outlined text-3xl">code</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">Web Development</h3>
+            <p class="text-on-surface-variant text-body-md">High-performance, scalable web applications built with the
+              latest stack.</p>
+          </div>
+        </div>
+        <!-- Service 4 -->
+        <div class="fade-up delay-3 service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined text-3xl">layers</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">UI/UX Design</h3>
+            <p class="text-on-surface-variant text-body-md">User-centric designs focused on intuitive flow and aesthetic
+              appeal.</p>
+          </div>
+        </div>
+        <!-- Service 5 -->
+        <div class="fade-up delay-4 service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div
+            class="w-14 h-14 rounded-2xl bg-secondary-container/10 flex items-center justify-center text-secondary-container">
+            <span class="material-symbols-outlined text-3xl">movie_edit</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">Video Editing</h3>
+            <p class="text-on-surface-variant text-body-md">Professional post-production for commercials, socials, and
+              long-form content.</p>
+          </div>
+        </div>
+        <!-- Service 6 -->
+        <div class="fade-up delay-5 service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
+          <div class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary">
+            <span class="material-symbols-outlined text-3xl">motion_photos_on</span>
+          </div>
+          <div>
+            <h3 class="text-headline-md font-headline-md text-on-surface mb-2">Motion Graphics</h3>
+            <p class="text-on-surface-variant text-body-md">Dynamic 2D and 3D animations that bring brand narratives to
+              life.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <!-- Footer -->
+  <footer class="bg-background border-t border-outline-variant/20 py-20">
+    <div
+      class="w-full max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8">
+      <a href="index.html" class="text-label-md font-bold text-primary hover:text-primary/80 transition-colors">YANDIAN.TECH</a>
+      <div class="flex flex-wrap justify-center gap-8">
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary-container transition-colors duration-300"
+          href="#">Privacy Policy</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary-container transition-colors duration-300"
+          href="#">Terms of Service</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary-container transition-colors duration-300"
+          href="#">LinkedIn</a>
+        <a class="text-on-surface-variant font-label-md text-label-md hover:text-secondary-container transition-colors duration-300"
+          href="#">GitHub</a>
+      </div>
+      <div class="text-body-md font-body-md text-on-surface-variant text-center md:text-right">
+        © 2026 YANDIAN.TECH. Built with Precision &amp; Logic.
+      </div>
+    </div>
+  </footer>
+  <!-- Mobile Navigation Menu Overlay -->
+  <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+    <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+      <span class="material-symbols-outlined text-[36px]">close</span>
+    </button>
+    <nav class="flex flex-col items-center gap-8 text-center">
+      <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="index.html">Home</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
+      <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
+    </nav>
+    <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+      Let's Talk
+    </a>
+  </div>
+
+  <script>
+    // Magnetic Button Effect
+    document.querySelectorAll('.magnetic-btn').forEach(btn => {
+      btn.addEventListener('mousemove', (e) => {
+        const position = btn.getBoundingClientRect();
+        const x = e.pageX - position.left - position.width / 2;
+        const y = e.pageY - position.top - position.height / 2;
+
+        btn.style.transform = `translate(${x * 0.3}px, ${y * 0.5}px) scale(1.05)`;
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'translate(0px, 0px) scale(1)';
+      });
+    });
+
+    // Intersection Observer for fade-up animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate-in');
+          // Unobserve after animation triggered
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Mobile Menu Logic
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const closeBtn = document.getElementById('mobile-menu-close');
+    const overlay = document.getElementById('mobile-menu-overlay');
+
+    if (menuBtn && overlay) {
+      menuBtn.addEventListener('click', () => {
+        overlay.classList.remove('opacity-0', 'pointer-events-none');
+        overlay.classList.add('opacity-100');
+      });
+    }
+
+    if (closeBtn && overlay) {
+      closeBtn.addEventListener('click', () => {
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+      });
+    }
+
+    // Close mobile menu when a link is clicked
+    const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        overlay.classList.remove('opacity-100');
+        overlay.classList.add('opacity-0', 'pointer-events-none');
+      });
+    });
+  </script>
+
+
+</body>
+
+</html>

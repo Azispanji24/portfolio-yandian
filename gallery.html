@@ -1,0 +1,1030 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Creative Gallery | YANDIAN.TECH</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-tertiary-fixed-variant": "#6d3a00",
+              "on-surface": "#e1e2ec",
+              "on-error-container": "#ffdad6",
+              "outline-variant": "#424753",
+              "inverse-primary": "#0059c6",
+              "on-tertiary-fixed": "#2e1500",
+              "error-container": "#93000a",
+              "secondary-container": "#14d1ff",
+              "tertiary-fixed-dim": "#ffb77b",
+              "secondary-fixed": "#b7eaff",
+              "surface-variant": "#32353c",
+              "on-surface-variant": "#c2c6d6",
+              "on-secondary-fixed": "#001f28",
+              "surface-tint": "#afc6ff",
+              "surface-dim": "#11131a",
+              "on-primary": "#002d6c",
+              "surface-bright": "#373941",
+              outline: "#8c909f",
+              background: "#050816",
+              "surface-container": "#1d1f27",
+              surface: "#0F172A",
+              error: "#ffb4ab",
+              "on-tertiary": "#4d2700",
+              "primary-container": "#528dff",
+              tertiary: "#ffb77b",
+              "surface-container-highest": "#32353c",
+              "on-tertiary-container": "#432100",
+              "on-secondary-fixed-variant": "#004e60",
+              "inverse-on-surface": "#2e3038",
+              "surface-container-high": "#272a31",
+              "on-primary-fixed": "#001a43",
+              "primary-fixed": "#d9e2ff",
+              "tertiary-fixed": "#ffdcc2",
+              "on-error": "#690005",
+              "surface-container-lowest": "#0b0e15",
+              "on-primary-container": "#00275f",
+              "secondary-fixed-dim": "#4cd6ff",
+              "primary-fixed-dim": "#afc6ff",
+              "on-secondary": "#003543",
+              "on-background": "#e1e2ec",
+              "tertiary-container": "#d87802",
+              "inverse-surface": "#e1e2ec",
+              "surface-container-low": "#191b22",
+              "on-secondary-container": "#00566b",
+              primary: "#4F8CFF",
+              "on-primary-fixed-variant": "#004398",
+              secondary: "#00D1FF",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              "2xl": "24px",
+              full: "9999px",
+            },
+            spacing: {
+              "section-gap-desktop": "160px",
+              gutter: "24px",
+              unit: "8px",
+              "section-gap-mobile": "80px",
+              "container-max": "1200px",
+            },
+            fontFamily: {
+              "display-lg-mobile": ["Space Grotesk"],
+              "body-md": ["Inter"],
+              "label-md": ["Inter"],
+              "headline-lg": ["Space Grotesk"],
+              "display-lg": ["Space Grotesk"],
+              "body-lg": ["Inter"],
+              "headline-md": ["Space Grotesk"],
+            },
+            fontSize: {
+              "display-lg-mobile": [
+                "40px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+              "display-lg": [
+                "72px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "500" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #050816;
+        color: #e1e2ec;
+        overflow-x: hidden;
+      }
+
+      .glass-nav {
+        backdrop-filter: blur(16px);
+        background: rgba(15, 23, 42, 0.6);
+      }
+
+      .masonry-grid {
+        columns: 1;
+        column-gap: 24px;
+      }
+      @media (min-width: 640px) {
+        .masonry-grid {
+          columns: 2;
+        }
+      }
+      @media (min-width: 1024px) {
+        .masonry-grid {
+          columns: 3;
+        }
+      }
+
+      .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 24px;
+      }
+
+      .ambient-glow {
+        box-shadow: 0 0 40px rgba(79, 140, 255, 0.15);
+      }
+
+      .reveal-up {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      .reveal-up.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .modal-blur {
+        backdrop-filter: blur(20px);
+        background: rgba(5, 8, 22, 0.85);
+      }
+
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 6px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-track {
+        background: #050816;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        background: #424753;
+        border-radius: 10px;
+      }
+
+      .glow-orb {
+        position: absolute;
+        width: 600px;
+        height: 600px;
+        border-radius: 50%;
+        background: radial-gradient(
+          circle,
+          rgba(79, 140, 255, 0.08) 0%,
+          transparent 70%
+        );
+        filter: blur(60px);
+        z-index: -1;
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-on-surface selection:bg-primary/30">
+    <!-- TopNavBar -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#services">Services</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contact.html"
+          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+          Let's Talk
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+    </header>
+    <main class="relative">
+      <!-- Background Orbs -->
+      <div class="glow-orb top-[-100px] left-[-200px]"></div>
+      <div
+        class="glow-orb top-[40%] right-[-200px]"
+        style="
+          background: radial-gradient(
+            circle,
+            rgba(0, 209, 255, 0.05) 0%,
+            transparent 70%
+          );
+        "
+      ></div>
+      <!-- Section 1: Creative Gallery -->
+      <section
+        class="max-w-container-max mx-auto px-gutter pt-section-gap-desktop pb-20"
+      >
+        <div class="text-center mb-16 reveal-up">
+          <span
+            class="inline-block px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md mb-6 uppercase tracking-widest"
+            >Creative Work</span
+          >
+          <h2 class="font-display-lg text-headline-lg lg:text-display-lg mb-6">
+            Design Gallery
+          </h2>
+          <p class="max-w-2xl mx-auto text-on-surface-variant font-body-lg">
+            A collection of selected visual works showcasing branding, UI/UX
+            design, digital illustration, social media content, and creative
+            concepts.
+          </p>
+        </div>
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12 reveal-up">
+          <button
+            class="filter-btn active px-6 py-2 rounded-full border border-primary bg-primary/10 text-primary font-medium transition-all"
+            data-filter="all"
+          >
+            All
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full border border-outline-variant/30 hover:border-primary/50 text-on-surface-variant transition-all"
+            data-filter="ui"
+          >
+            UI Design
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full border border-outline-variant/30 hover:border-primary/50 text-on-surface-variant transition-all"
+            data-filter="branding"
+          >
+            Branding
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full border border-outline-variant/30 hover:border-primary/50 text-on-surface-variant transition-all"
+            data-filter="illustration"
+          >
+            Illustration
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full border border-outline-variant/30 hover:border-primary/50 text-on-surface-variant transition-all"
+            data-filter="social"
+          >
+            Social Media
+          </button>
+          <button
+            class="filter-btn px-6 py-2 rounded-full border border-outline-variant/30 hover:border-primary/50 text-on-surface-variant transition-all"
+            data-filter="motion"
+          >
+            Motion
+          </button>
+        </div>
+        <!-- Masonry Grid -->
+        <div class="masonry-grid reveal-up">
+          <!-- Item 1 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('Modern Fintech App', 'ui')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A high-fidelity mobile app interface for a modern fintech company. The design features a dark mode aesthetic with deep indigo backgrounds and vibrant electric blue accents. Sharp typography, clean glassmorphism charts, and glowing transaction cards create a luxury digital financial experience. The lighting is crisp and futuristic, emphasizing a sophisticated professional tool."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZlcJoFYmdhSWwkE9nus-0lR-wjt8aazGAYkWKgwi115RSYC-L4VEb9MpbTSjQIjgJrOMBj0zQDGDhLMu_nrupeFLL_pTk5GBDkvB1QiQAPUAuKCA9Ef8qSuFjKcBWFyqApvANUXAF_5LMrGPULYfnG-28WkbgiFE1nMIxoPsgZL9o1Ekt53qh9BU0eoSzp4edb5EBW_Dw7JZAt4zlPOaAhz-eG2v2YFQ7_gX-ykrwGSvvU3KoCHDSMkK7Ei1CpcisZxykQE9hcJxP"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2">UI Design</span>
+                <h3 class="font-headline-md text-xl">Modern Fintech App</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 2 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('Luxury Watch Branding', 'branding')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A premium branding project for a luxury watchmaker. The visual identity is centered around a minimalist serif logo and a monochromatic palette of charcoal and silver. Professional product photography shows the watch on a textured dark granite surface with soft, directional lighting that creates dramatic highlights and shadows, evoking a sense of timeless elegance and craftsmanship."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsVcW2sFgPVygkJaz9pHg6oRphAK29xD6zyXWwJh-NrHtqyIFlciwjqFisJquNRYkrxcsmSm0oXrytdm0UHRAD4HeynDaDqP73SivkVgBBLxTnG2Q4_HlKLJeUODNa8pLqbKOiEICBs5jElxWiPNdgFfR9IHHJ7mPIAcKyZMh3knofiFivkrHuRkkfHnCV9eurIWhEvoXAH4LQmf8z8HnNokd-seaIWuRKJTQ4zPALdWb3pUGoFqHc0GwzI_VnFBTa3aDBsYb4mAHp"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2">Branding</span>
+                <h3 class="font-headline-md text-xl">Luxury Watch Branding</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 3 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="
+              openGalleryModal('Abstract 3D Illustration', 'illustration')
+            "
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="An abstract 3D digital illustration featuring fluid, metallic shapes interlocking in mid-air. The scene is illuminated by a split-lighting setup of magenta and cyan neon, reflecting off the smooth chrome surfaces. The composition feels dynamic and weightless, set against a deep cosmic void. The visual style is high-end tech-art, showcasing advanced digital sculpting and rendering techniques."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt3OK01wteW0hdbUnnkiIbp04AKDY2hNLMrLY7kvWOXoNEPBDf9WkbaRI1STo_MaXmAf1S9tB4REYV4viis7973shAhgt0wde3UzsIG5TeQCQPeDuNbUB1A1nruESMyfc5PRsqEKK8ZoFcBOV5fN1z7eoXZgtOMkOT5C16uW2IOBPGQXQZGGzszoYRJHiC4U0M09Zm0b7cBHSeQPZuo9NagjVA0cxVAYk0PCCFvmI_DZXK0x0KjCp1y-i0nQkRukXzXtZ875yLBHZS"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2"
+                  >Illustration</span
+                >
+                <h3 class="font-headline-md text-xl">Abstract 3D Concept</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 4 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('Digital Agency Poster', 'social')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A striking promotional poster for a digital design agency. Bold, oversized Swiss typography dominates the layout, with experimental distorted lettering and a vibrant orange and black color scheme. The design uses heavy grain textures and layered graphic elements to create a contemporary, edgy aesthetic. The lighting is uniform and flat, focusing on the strength of the graphic composition and letterforms."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuADHVBeCv_4w-i552z1Twz0l9kKE_UAEevA46MlWgi6yyOKFCeNMOtQ0ctMog1l9sEmJilYkqPuWiM4dYVeSMSE3eHKkeMRIAfwA5jxCZHNrpBRuPULcub7vJNHt6rvbyvLEPsXM1ljUXwKnyJaVBblrgtKfwY25v_JTCSArkV78cNouWdUV1BFB-MDBy0x5oyQ3Fppvo8EwYkrC7gsfJUSH-griN_edvLvCU_0dIQDMhgsrNw_qz8NiAj1pA0WQFRjuFnPsDrZO0Xu"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2"
+                  >Graphic Design</span
+                >
+                <h3 class="font-headline-md text-xl">Digital Agency Poster</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 5 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('SaaS Dashboard', 'ui')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A comprehensive SaaS dashboard UI for data analytics. The interface uses a sophisticated dark theme with subtle grid lines and translucent glass panels. Interactive charts and complex data visualizations are rendered in a palette of neon greens and deep purples. The layout is clean and modular, prioritizing information density and user efficiency within a high-tech digital workspace environment."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEb-RgQzsM_-c-PuQ51myOVNHHAPgQQ0FM1zzF75vWXMT44cbNjTURCNQdDrGOp8UE9exaQ2CFbdYfpZ2VLXCZuqCuUvZz36BotY9TzNPtq44tlI89OF8zEqIAhca2QkvKIeOli9cA5gyFx24PfWrDw5dtI58UJyitTMVqd9LVOqTkTNOPJO8QuiNc4TTt84h_Wv9BTmaslkY-jhE01tJckZv5bVh3rUQ3ICYRRUBTev6iez2b28coNoPQb9EPHaryb7zUh3nT_J_m"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2">UI Design</span>
+                <h3 class="font-headline-md text-xl">Data SaaS Dashboard</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 6 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('Minimalist Social Campaign', 'social')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A collection of minimalist social media post designs for a lifestyle brand. The aesthetic is clean and airy, utilizing soft beige backgrounds and elegant serif typography. Each post features a single high-quality photograph of organic textures like linen or ceramic, captured in soft natural morning light. The overall mood is peaceful and high-end, targeting a conscious, sophisticated consumer audience."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwAE5ntRqFr0Z_71tgNlSKA5AEKlzbUYgHMGyxi-2_taQlCsEdk4pDq1tTjpZiTsgcTW-8zhCD8jFoCpABtbtagjpxgWtoxEn3O1CufXaBcEkjjCGOIfhv3ZZySctjbnMeveCYQzeSlmcpXGFpLTqziynH4HW8tfIlU6C-wqh0W1FaR6iM51vRm2osjsLvTznpYXdWVpTurpn08BdFdJVEXo8khCosC04jUk6UyFLIcZSq6nohcDH0yoYxh5lxStyKxJWr4N3nSjsC"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2"
+                  >Social Media</span
+                >
+                <h3 class="font-headline-md text-xl">Lifestyle Campaign</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 7 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('AI Vision Concept', 'illustration')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A conceptual digital illustration representing AI vision. A human eye is fused with glowing circuit patterns and digital data overlays in a vibrant palette of gold and deep navy. Intricate neural network lines spread across the background like glowing cobwebs. The lighting is dramatic, with intense glows emanating from the technological components, creating a sense of advanced intelligence and futuristic evolution."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAILBu9PEZ5HuVmgLZ6PW9anm0bK3ZeZbvA8buI--9MRqKMYC_yg1ulFqaQhg35JUcHyaYGD-piajdKxlHj8ooEKCHKnBBDuU47KzC3LIBDg2UPNrAY8PoVjPv573SkTdNrpt9aA3Lt8DB_hiNPfTX40glrgfjTuFSckYqbp3ami-gHQ7HZU4R21bYdrQqw9NPQQet9BSm1eoE7ygpu21lKSalqlCAO9k4hJO9sSl3z6VpAa673YKdhStWFTEN_GYmFeX4TiQWfLM_2"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2"
+                  >Illustration</span
+                >
+                <h3 class="font-headline-md text-xl">AI Vision Concept</h3>
+              </div>
+            </div>
+          </div>
+          <!-- Item 8 -->
+          <div
+            class="masonry-item group cursor-pointer"
+            onclick="openGalleryModal('Crypto Wallet Mobile', 'ui')"
+          >
+            <div
+              class="relative overflow-hidden rounded-2xl border border-outline-variant/20 bg-surface transition-all duration-500 group-hover:scale-[1.02] group-hover:ambient-glow"
+            >
+              <img
+                class="w-full h-auto object-cover"
+                data-alt="A sleek cryptocurrency wallet mobile application design. The UI features a futuristic holographic card representing the user's balance, floating over a dark, blurred background. Typography is sharp and technical, with micro-interactions and glowing status indicators in lime green. The aesthetic is inspired by cyber-punk luxury hardware, emphasizing security and advanced technology through premium visual design."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuASfWBB8-5_kurrnpbRPPTyvSLw_YELmBalAszDKllpuhKPy98tSBhPAsUiYUFN43xZTfvelZlh3JKaiOHsan51wz94cXjwGOJe65I_0kZk4saG4Dw-y_g_Dowcb8bI94t3Nyf1B6bamy0YMQrVCHrAebuaRcPqf9XUvAWXFX7KkLPlxaofk3SQFnk7PiDT-MQr295EpHeQPdmVCKeX6CKwnPSKLiK4njgf7fywxGCYTvbFLVQpgmw1tjAFX4zuVdRoIyp0lbrMyffC"
+              />
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-background/90 via-background/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6"
+              >
+                <span class="text-primary font-label-md mb-2">UI Design</span>
+                <h3 class="font-headline-md text-xl">Crypto Wallet UI</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Section 2: Video Showcase -->
+      <section
+        class="bg-surface-container-lowest/50 py-section-gap-desktop overflow-hidden"
+      >
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div
+            class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8 reveal-up"
+          >
+            <div class="max-w-2xl">
+              <span
+                class="inline-block px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-md mb-6 uppercase tracking-widest"
+                >Video Production</span
+              >
+              <h2
+                class="font-display-lg text-headline-lg lg:text-display-lg mb-6"
+              >
+                Featured Video Projects
+              </h2>
+              <p class="text-on-surface-variant font-body-lg">
+                Professional editing, storytelling, motion graphics, and
+                commercial productions.
+              </p>
+            </div>
+            <div class="flex gap-4">
+              <button
+                class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all group"
+              >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+                  >arrow_back</span
+                >
+              </button>
+              <button
+                class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all group"
+              >
+                <span
+                  class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
+                  >arrow_forward</span
+                >
+              </button>
+            </div>
+          </div>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-up"
+          >
+            <!-- Video Card 1 -->
+            <div
+              class="group cursor-pointer"
+              onclick="openVideoModal('Corporate Brand Video')"
+            >
+              <div
+                class="relative aspect-video overflow-hidden rounded-2xl border border-outline-variant/20 mb-6 group-hover:ambient-glow transition-all"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  src="https://lh3.googleusercontent.com/aida/AP1WRLtaCCJoPWCHBl5DE3ya2jQQDmQ0eFqT6RZ8vr4FUZlW96OfDFuUxNiY5y0OvLDifwh8uT48KCE_MJZXC_X5qk3vfOXBAAfkDgKPm8U0sA2Xhf5PQMs2npaQwuvLvEYKpxAw0OzaA7UAbjj_hbpsItr9HuS22hWucX4B1zFeZkviKkR_QhsoBJ1RxZquv2XrJFy-G0iz9CoBeToqyIlFTlfOd8qUuIELzMFWbn378EN8_2sDzLTViaNxM_E-"
+                />
+                <div
+                  class="absolute inset-0 bg-background/40 flex items-center justify-center"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center scale-90 group-hover:scale-100 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-4xl"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h3
+                class="font-headline-md text-2xl mb-2 group-hover:text-primary transition-colors"
+              >
+                Corporate Brand Video
+              </h3>
+              <p class="text-on-surface-variant font-body-md">
+                A cinematic journey through the company's 20-year history and
+                vision.
+              </p>
+            </div>
+            <!-- Video Card 2 -->
+            <div
+              class="group cursor-pointer"
+              onclick="openVideoModal('Product Commercial')"
+            >
+              <div
+                class="relative aspect-video overflow-hidden rounded-2xl border border-outline-variant/20 mb-6 group-hover:ambient-glow transition-all"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  data-alt="A sleek product commercial scene featuring a high-end smartphone. The phone is captured in extreme close-up, rotating slowly as liquid metal droplets dance around it. The lighting is high-contrast with intense blue and white rim lights that highlight the device's premium materials. A dark, reflective floor creates a clean, sophisticated environment typical of luxury tech advertising."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOpvPgj9l5v3tMlUvAmy3G3n6UMfIIBQqMZYROZzecx56jHYMoThaNkvQ3iBuUNNZm9uSBUTa2oG-djDXFPWa1C0NFvr-JCtlQ9Ou6gV_B7o03R2EzC-77bCp1JcrozAteLy3uW2dOcV3GEU3VBoIkJ7RHUxvwIzAP67WM5mN09xLWWJqT71DvwlrOmsQC6Ue2KvfuSnon8CXLIFDOHUH1mkSqvHDErJf_lXpEHvyfAWqAAnNVkLyXJbBtyDgi6LsPicQaVQglso1C"
+                />
+                <div
+                  class="absolute inset-0 bg-background/40 flex items-center justify-center"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center scale-90 group-hover:scale-100 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-4xl"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h3
+                class="font-headline-md text-2xl mb-2 group-hover:text-primary transition-colors"
+              >
+                Product Commercial
+              </h3>
+              <p class="text-on-surface-variant font-body-md">
+                High-energy commercial spot for a flagship consumer electronic
+                device.
+              </p>
+            </div>
+            <!-- Video Card 3 -->
+            <div
+              class="group cursor-pointer"
+              onclick="openVideoModal('Travel Cinematic')"
+            >
+              <div
+                class="relative aspect-video overflow-hidden rounded-2xl border border-outline-variant/20 mb-6 group-hover:ambient-glow transition-all"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  data-alt="A breathtaking cinematic wide shot of a traveler standing on a cliff edge overlooking a vast volcanic landscape in Iceland. The color grading is moody and cinematic, with deep blues and earthy oranges. The lighting is soft and diffused from a low sun, creating long shadows and a sense of epic scale and solitude. The visual style is reminiscent of high-end travel documentaries."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWHJfaWI5F0vnDAMmPb-XHvbMCdmarmM7fkGc-eQ7OR5m8Z9F0I8ijGpazRUouZF27X_XLhBgXajyRJ0bDB7deb0ud4euBVYq533L8gCjMb-rptT7x9Aypk1bazrXxhTNjHZdyXRFasATirl_5ysJQrMUcHqnpRTyto16cUMttDHw6hN3d7mG1t_m7_ILPDls-lFVWrZxqibETC4P-BMYbLQS01po-meXNr7tUCx3Q9_unV4oyRYCXIu2af5PEH_NbxLNxVFeHUDu2"
+                />
+                <div
+                  class="absolute inset-0 bg-background/40 flex items-center justify-center"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center scale-90 group-hover:scale-100 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-4xl"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h3
+                class="font-headline-md text-2xl mb-2 group-hover:text-primary transition-colors"
+              >
+                Travel Cinematic
+              </h3>
+              <p class="text-on-surface-variant font-body-md">
+                Documentary-style travel film exploring the landscapes of the
+                North.
+              </p>
+            </div>
+            <!-- Additional items for responsive grid -->
+            <div
+              class="group cursor-pointer hidden md:block"
+              onclick="openVideoModal('Educational Content')"
+            >
+              <div
+                class="relative aspect-video overflow-hidden rounded-2xl border border-outline-variant/20 mb-6 group-hover:ambient-glow transition-all"
+              >
+                <img
+                  class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  data-alt="A professional educational video setup. A charismatic instructor is seen in a medium shot, gesturing towards a glowing holographic interface that displays complex mathematical equations and 3D diagrams. The background is a clean, modern studio with warm practical lights. The visual style is bright and engaging, emphasizing clarity and technological sophistication in modern learning."
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCAgdlbiFUuNjZ-DZWxTC45rHz8mc7POfiydvm1NZxpIxNTFB0FspdE8EcTPgzV5Ho2F5WXMiJtC3hLzpVYsI8_NzdyN9jPnIIyV8MQiGFsg4fAPzW5VKyAerz0tN_MUWDtQ39_7dxPRqxa78xF6W7ZE7o-9dWEg7LvnZ8Bs1ODojxfIE77bK3s0zo_MH0nDCNcLlG17THjVd0YSckO5lAX3ZdGZ3DEBp28TTCui21g-ObZlwV5Y2R3fnozXE0GqZFSvGBAzsiEnC2"
+                />
+                <div
+                  class="absolute inset-0 bg-background/40 flex items-center justify-center"
+                >
+                  <div
+                    class="w-16 h-16 rounded-full bg-primary/90 text-white flex items-center justify-center scale-90 group-hover:scale-100 transition-transform"
+                  >
+                    <span
+                      class="material-symbols-outlined text-4xl"
+                      style="font-variation-settings: &quot;FILL&quot; 1"
+                      >play_arrow</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h3
+                class="font-headline-md text-2xl mb-2 group-hover:text-primary transition-colors"
+              >
+                Educational Series
+              </h3>
+              <p class="text-on-surface-variant font-body-md">
+                Engaging educational content with advanced motion graphics
+                overlays.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Final CTA Section -->
+      <section class="py-section-gap-desktop text-center relative">
+        <div
+          class="glow-orb top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-30"
+        ></div>
+        <div class="max-w-3xl mx-auto px-gutter reveal-up">
+          <h2 class="font-display-lg text-headline-lg lg:text-display-lg mb-8">
+            Let's Create Something Extraordinary
+          </h2>
+          <p class="text-on-surface-variant font-body-lg mb-12">
+            Whether it's AI-powered applications, beautiful design systems, or
+            cinematic storytelling, let's build something that makes an impact.
+          </p>
+          <a href="contact.html"
+            class="bg-primary text-on-primary px-10 py-4 rounded-full font-headline-md text-xl hover:shadow-[0_0_30px_rgba(79,140,255,0.4)] transition-all transform hover:scale-105 active:scale-95 inline-block text-center"
+          >
+            Get in Touch
+          </a>
+        </div>
+      </section>
+    </main>
+    <!-- Footer -->
+    <footer class="py-12 border-t border-outline-variant/20 bg-background">
+      <div
+        class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="space-y-2 text-center md:text-left">
+          <a href="index.html" class="text-label-md font-bold text-primary hover:text-primary/80 transition-colors">YANDIAN.TECH</a>
+          <p class="text-label-md text-on-surface-variant">
+            © 2026 YANDIAN.TECH. Built with Precision &amp; Logic.
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+    <!-- Premium Modal (Template) -->
+    <div class="fixed inset-0 z-[100] hidden" id="galleryModal">
+      <div class="absolute inset-0 modal-blur" onclick="closeModal()"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-5xl h-[85vh] bg-surface rounded-2xl border border-outline-variant/30 shadow-2xl flex flex-col md:flex-row overflow-hidden reveal-up active"
+      >
+        <button
+          class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-background/60 flex items-center justify-center hover:bg-primary/20 transition-all"
+          onclick="closeModal()"
+        >
+          <span class="material-symbols-outlined text-white">close</span>
+        </button>
+        <div
+          class="w-full md:w-3/5 bg-background flex items-center justify-center p-4"
+        >
+          <img
+            class="max-h-full max-w-full object-contain rounded-lg"
+            data-alt="A detailed design case study preview image featuring high-end UI/UX elements and professional branding components. The layout is presented in a clean, gallery-style aesthetic with soft lighting and sophisticated dark-mode color palettes. The overall visual style is premium and technologically advanced, suitable for a top-tier creative portfolio showcase."
+            id="modalImg"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRfupnbqieTowhkFWxXNiTcITdI26XUcDzAjx6zqqPxQiy3-_ejESTXXl-4F8raFr88q-3oVwd-FwA24B7GnI5RpdTzMPAT9Ss7t2ymXTyb3tX03B92WXsZXzvu8QKs_9uopOBoPgLAScSeKQShsML6u8SZVy5Tuphc-5PPmA5Wh1-XXbAIHGL8MiJ9j27JgQuplcRs6RRg3ri87YdAGgynhfFLQoiZHA7MyOkXBrK9G_9kQkqtS-CcCyJnyNQdua3P0AtWJr_Wkga"
+          />
+        </div>
+        <div
+          class="w-full md:w-2/5 p-8 overflow-y-auto custom-scrollbar bg-surface border-l border-outline-variant/10"
+        >
+          <span
+            class="text-primary font-label-md mb-2 uppercase block"
+            id="modalCategory"
+            >UI Design</span
+          >
+          <h3 class="font-display-lg text-headline-md mb-6" id="modalTitle">
+            Modern Fintech App
+          </h3>
+          <div class="space-y-8">
+            <div>
+              <h4
+                class="text-on-surface font-headline-md text-sm uppercase tracking-widest mb-3"
+              >
+                Objective
+              </h4>
+              <p class="text-on-surface-variant text-body-md">
+                Create a seamless, secure, and futuristic mobile banking
+                experience for Gen Z users who demand speed and aesthetic
+                precision.
+              </p>
+            </div>
+            <div>
+              <h4
+                class="text-on-surface font-headline-md text-sm uppercase tracking-widest mb-3"
+              >
+                Creative Process
+              </h4>
+              <p class="text-on-surface-variant text-body-md">
+                Iterative prototyping focused on reducing friction points in the
+                transaction flow, followed by a high-fidelity visual overhaul
+                using glassmorphism components.
+              </p>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <h4
+                  class="text-on-surface font-headline-md text-sm uppercase tracking-widest mb-3"
+                >
+                  Software
+                </h4>
+                <div class="flex flex-wrap gap-2">
+                  <span class="bg-surface-variant/50 px-3 py-1 rounded text-xs"
+                    >Figma</span
+                  >
+                  <span class="bg-surface-variant/50 px-3 py-1 rounded text-xs"
+                    >After Effects</span
+                  >
+                </div>
+              </div>
+              <div>
+                <h4
+                  class="text-on-surface font-headline-md text-sm uppercase tracking-widest mb-3"
+                >
+                  Typography
+                </h4>
+                <p class="text-on-surface-variant text-sm">
+                  Space Grotesk &amp; Inter
+                </p>
+              </div>
+            </div>
+            <div>
+              <h4
+                class="text-on-surface font-headline-md text-sm uppercase tracking-widest mb-3"
+              >
+                Color Palette
+              </h4>
+              <div class="flex gap-2">
+                <div class="w-8 h-8 rounded bg-[#4F8CFF]"></div>
+                <div class="w-8 h-8 rounded bg-[#00D1FF]"></div>
+                <div class="w-8 h-8 rounded bg-[#0F172A]"></div>
+                <div class="w-8 h-8 rounded bg-[#FFFFFF]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Video Modal (Template) -->
+    <div class="fixed inset-0 z-[100] hidden" id="videoModal">
+      <div class="absolute inset-0 modal-blur" onclick="closeModal()"></div>
+      <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-11/12 max-w-6xl h-[85vh] bg-background rounded-2xl border border-outline-variant/30 shadow-2xl overflow-hidden flex flex-col"
+      >
+        <button
+          class="absolute top-6 right-6 z-10 w-10 h-10 rounded-full bg-background/60 flex items-center justify-center hover:bg-primary/20 transition-all"
+          onclick="closeModal()"
+        >
+          <span class="material-symbols-outlined text-white">close</span>
+        </button>
+        <div
+          class="w-full aspect-video bg-black flex items-center justify-center relative group"
+        >
+          <img
+            class="w-full h-full object-cover"
+            src="https://lh3.googleusercontent.com/aida/AP1WRLtaCCJoPWCHBl5DE3ya2jQQDmQ0eFqT6RZ8vr4FUZlW96OfDFuUxNiY5y0OvLDifwh8uT48KCE_MJZXC_X5qk3vfOXBAAfkDgKPm8U0sA2Xhf5PQMs2npaQwuvLvEYKpxAw0OzaA7UAbjj_hbpsItr9HuS22hWucX4B1zFeZkviKkR_QhsoBJ1RxZquv2XrJFy-G0iz9CoBeToqyIlFTlfOd8qUuIELzMFWbn378EN8_2sDzLTViaNxM_E-"
+          />
+          <div
+            class="absolute inset-0 bg-black/60 flex items-center justify-center"
+          >
+            <span
+              class="material-symbols-outlined text-8xl text-primary opacity-50"
+              >smart_display</span
+            >
+          </div>
+        </div>
+        <div class="flex-1 p-10 overflow-y-auto custom-scrollbar">
+          <div class="flex flex-col md:flex-row justify-between gap-10">
+            <div class="flex-1">
+              <h3 class="font-display-lg text-headline-lg mb-6" id="videoTitle">
+                Video Project Title
+              </h3>
+              <p class="text-on-surface-variant font-body-lg mb-8">
+                Detailed project narrative describing the vision, production
+                challenges, and final outcome of the video production.
+              </p>
+              <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div>
+                  <h4 class="text-primary font-label-md mb-2">GOALS</h4>
+                  <p class="text-on-surface text-sm">Brand Awareness</p>
+                </div>
+                <div>
+                  <h4 class="text-primary font-label-md mb-2">SOFTWARE</h4>
+                  <p class="text-on-surface text-sm">Premiere, DaVinci</p>
+                </div>
+                <div>
+                  <h4 class="text-primary font-label-md mb-2">TIMELINE</h4>
+                  <p class="text-on-surface text-sm">4 Weeks</p>
+                </div>
+                <div>
+                  <h4 class="text-primary font-label-md mb-2">CLIENT</h4>
+                  <p class="text-on-surface text-sm">Fortune 500 Co.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      // Intersection Observer for Scroll Reveals
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+          }
+        });
+      }, observerOptions);
+
+      document
+        .querySelectorAll(".reveal-up")
+        .forEach((el) => observer.observe(el));
+
+      // Filter Functionality
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) =>
+              b.classList.remove(
+                "active",
+                "border-primary",
+                "bg-primary/10",
+                "text-primary",
+              ),
+            );
+          document
+            .querySelectorAll(".filter-btn")
+            .forEach((b) =>
+              b.classList.add(
+                "border-outline-variant/30",
+                "text-on-surface-variant",
+              ),
+            );
+
+          this.classList.add(
+            "active",
+            "border-primary",
+            "bg-primary/10",
+            "text-primary",
+          );
+          this.classList.remove(
+            "border-outline-variant/30",
+            "text-on-surface-variant",
+          );
+
+          // Masonry filter animation placeholder
+          const items = document.querySelectorAll(".masonry-item");
+          items.forEach((item) => {
+            item.style.opacity = "0";
+            item.style.transform = "scale(0.9)";
+            setTimeout(() => {
+              item.style.opacity = "1";
+              item.style.transform = "scale(1)";
+            }, 300);
+          });
+        });
+      });
+
+      // Modal Controls
+      function openGalleryModal(title, category) {
+        document.getElementById("modalTitle").innerText = title;
+        document.getElementById("modalCategory").innerText =
+          category.toUpperCase();
+        document.getElementById("galleryModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function openVideoModal(title) {
+        document.getElementById("videoTitle").innerText = title;
+        document.getElementById("videoModal").classList.remove("hidden");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeModal() {
+        document.getElementById("galleryModal").classList.add("hidden");
+        document.getElementById("videoModal").classList.add("hidden");
+        document.body.style.overflow = "auto";
+      }
+
+      // Close on ESC
+      window.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") closeModal();
+      });
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      if (menuBtn && overlay) {
+        menuBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-0', 'pointer-events-none');
+          overlay.classList.add('opacity-100');
+        });
+      }
+
+      if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      }
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      });
+    </script>
+    
+    <!-- Mobile Navigation Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+        <span class="material-symbols-outlined text-[36px]">close</span>
+      </button>
+      <nav class="flex flex-col items-center gap-8 text-center">
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
+        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+        Let's Talk
+      </a>
+    </div>
+  </body>
+</html>

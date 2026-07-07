@@ -1,0 +1,823 @@
+<!doctype html>
+
+<html class="dark" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Professional Journey | YANDIAN.TECH</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://unpkg.com/framer-motion@11.0.8/dist/framer-motion.js"></script>
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary-container": "#00566b",
+              "on-secondary-fixed-variant": "#004e60",
+              "on-background": "#e1e2ec",
+              "tertiary-fixed": "#ffdcc2",
+              error: "#ffb4ab",
+              "secondary-fixed-dim": "#4cd6ff",
+              "inverse-primary": "#0059c6",
+              background: "#050816",
+              "surface-container-high": "#272a31",
+              "inverse-surface": "#e1e2ec",
+              "surface-variant": "#32353c",
+              "surface-container-lowest": "#0b0e15",
+              "on-primary-fixed": "#001a43",
+              "surface-container-highest": "#32353c",
+              "secondary-container": "#14d1ff",
+              "outline-variant": "#424753",
+              "on-primary": "#002d6c",
+              secondary: "#a6e6ff",
+              "primary-fixed": "#d9e2ff",
+              outline: "#8c909f",
+              "inverse-on-surface": "#2e3038",
+              tertiary: "#ffb77b",
+              "tertiary-container": "#d87802",
+              "on-tertiary-fixed": "#2e1500",
+              "error-container": "#93000a",
+              "secondary-fixed": "#b7eaff",
+              primary: "#afc6ff",
+              "on-error-container": "#ffdad6",
+              "surface-dim": "#11131a",
+              "surface-container-low": "#191b22",
+              "on-tertiary-container": "#432100",
+              "on-tertiary": "#4d2700",
+              "on-secondary-fixed": "#001f28",
+              "on-surface-variant": "#c2c6d6",
+              "tertiary-fixed-dim": "#ffb77b",
+              surface: "#11131a",
+              "on-tertiary-fixed-variant": "#6d3a00",
+              "surface-bright": "#373941",
+              "primary-container": "#528dff",
+              "on-primary-container": "#00275f",
+              "on-error": "#690005",
+              "surface-container": "#1d1f27",
+              "on-surface": "#e1e2ec",
+              "surface-tint": "#afc6ff",
+              "primary-fixed-dim": "#afc6ff",
+              "on-secondary": "#003543",
+              "on-primary-fixed-variant": "#004398",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              "section-gap-mobile": "80px",
+              "section-gap-desktop": "160px",
+              "container-max": "1200px",
+              unit: "8px",
+              gutter: "24px",
+            },
+            fontFamily: {
+              "headline-lg": ["Space Grotesk"],
+              "display-lg-mobile": ["Space Grotesk"],
+              "display-lg": ["Space Grotesk"],
+              "label-md": ["Inter"],
+              "body-lg": ["Inter"],
+              "body-md": ["Inter"],
+              "headline-md": ["Space Grotesk"],
+            },
+            fontSize: {
+              "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "600" }],
+              "display-lg-mobile": [
+                "40px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "display-lg": [
+                "72px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "700",
+                },
+              ],
+              "label-md": [
+                "14px",
+                { lineHeight: "1", letterSpacing: "0.05em", fontWeight: "600" },
+              ],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "500" }],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        background-color: #050816;
+        color: #e1e2ec;
+        overflow-x: hidden;
+      }
+      .glass-card {
+        background: rgba(15, 23, 42, 0.6);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(175, 198, 255, 0.1);
+      }
+      .timeline-path {
+        background: linear-gradient(
+          180deg,
+          transparent 0%,
+          #afc6ff 20%,
+          #afc6ff 80%,
+          transparent 100%
+        );
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      @keyframes flow {
+        0% {
+          transform: translateY(-100%);
+        }
+        100% {
+          transform: translateY(100%);
+        }
+      }
+      .animate-flow {
+        animation: flow 3s linear infinite;
+      }
+    </style>
+  </head>
+  <body class="font-body-md text-body-md pt-24">
+    <!-- Navigation Header -->
+    <header
+      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
+        <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#services">Services</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="contact.html">Contact</a>
+      </nav>
+      <div class="flex items-center gap-4">
+        <a href="contact.html"
+          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+          Let's Talk
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+          <span class="material-symbols-outlined text-[28px]">menu</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- Experience Timeline Section -->
+    <section
+      class="py-section-gap-mobile desktop:py-section-gap-desktop relative overflow-hidden"
+    >
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full timeline-path opacity-20 hidden md:block"
+      ></div>
+      <div class="max-w-container-max mx-auto px-gutter relative z-10">
+        <div class="flex flex-col items-center mb-16 text-center">
+          <span
+            class="px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary font-label-md text-label-md uppercase mb-6"
+            >Experience</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg md:text-headline-lg text-on-background max-w-2xl"
+          >
+            Professional Journey
+          </h2>
+        </div>
+        <div class="space-y-12 md:space-y-0 relative">
+          <!-- 2026 -->
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between group"
+          >
+            <div class="md:w-[45%] order-2 md:order-1">
+              <div
+                class="glass-card p-8 rounded-2xl border-l-4 border-l-primary hover:border-l-secondary-container transition-all duration-500 hover:translate-y-[-4px]"
+              >
+                <span class="text-primary font-bold block mb-2"
+                  >2026 — Present</span
+                >
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Senior AI Engineer
+                </h3>
+                <p class="text-on-surface-variant mb-4">Creative Tech Studio</p>
+                <p class="text-outline">
+                  Architecting large-scale AI automation systems and neural
+                  network integrations for industry-leading media firms.
+                </p>
+              </div>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-2 border-primary z-20 items-center justify-center"
+            >
+              <div
+                class="w-3 h-3 rounded-full bg-primary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(175,198,255,0.8)]"
+              ></div>
+            </div>
+            <div class="md:w-[45%] order-1 md:order-2"></div>
+          </div>
+          <!-- 2025 -->
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between group md:pt-24"
+          >
+            <div class="md:w-[45%] order-2 md:order-2">
+              <div
+                class="glass-card p-8 rounded-2xl border-r-4 border-r-secondary md:border-r-0 md:border-l-4 md:border-l-secondary hover:border-l-primary transition-all duration-500 hover:translate-y-[-4px]"
+              >
+                <span class="text-secondary font-bold block mb-2">2025</span>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Freelance AI &amp; Design
+                </h3>
+                <p class="text-on-surface-variant mb-4">Global Startups</p>
+                <p class="text-outline">
+                  Bridging the gap between intelligent data and aesthetic
+                  interfaces for series A startups and digital agencies.
+                </p>
+              </div>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-2 border-secondary z-20 items-center justify-center"
+            >
+              <div
+                class="w-3 h-3 rounded-full bg-secondary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(166,230,255,0.8)]"
+              ></div>
+            </div>
+            <div class="md:w-[45%] order-1 md:order-1"></div>
+          </div>
+          <!-- 2024 -->
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between group md:pt-24"
+          >
+            <div class="md:w-[45%] order-2 md:order-1">
+              <div
+                class="glass-card p-8 rounded-2xl border-l-4 border-l-tertiary hover:border-l-primary transition-all duration-500 hover:translate-y-[-4px]"
+              >
+                <span class="text-tertiary font-bold block mb-2">2024</span>
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  Creative Designer
+                </h3>
+                <p class="text-on-surface-variant mb-4">
+                  Branding &amp; Motion
+                </p>
+                <p class="text-outline">
+                  Spearheaded visual identity systems and high-fidelity motion
+                  graphics for international retail brands.
+                </p>
+              </div>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-2 border-tertiary z-20 items-center justify-center"
+            >
+              <div
+                class="w-3 h-3 rounded-full bg-tertiary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(255,183,123,0.8)]"
+              ></div>
+            </div>
+            <div class="md:w-[45%] order-1 md:order-2"></div>
+          </div>
+          <!-- 2023 -->
+          <div
+            class="flex flex-col md:flex-row items-center md:justify-between group md:pt-24"
+          >
+            <div class="md:w-[45%] order-2 md:order-2">
+              <div
+                class="glass-card p-8 rounded-2xl border-l-4 border-l-primary-fixed hover:border-l-primary transition-all duration-500 hover:translate-y-[-4px]"
+              >
+                <span class="text-primary-fixed font-bold block mb-2"
+                  >2023</span
+                >
+                <h3 class="font-headline-md text-headline-md mb-2">
+                  CS Student
+                </h3>
+                <p class="text-on-surface-variant mb-4">
+                  University of Innovation
+                </p>
+                <p class="text-outline">
+                  Deep-diving into machine learning algorithms, computer vision,
+                  and experimental web architecture projects.
+                </p>
+              </div>
+            </div>
+            <div
+              class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-background border-2 border-primary-fixed z-20 items-center justify-center"
+            >
+              <div
+                class="w-3 h-3 rounded-full bg-primary-fixed group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(217,226,255,0.8)]"
+              ></div>
+            </div>
+            <div class="md:w-[45%] order-1 md:order-1"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Testimonials Section -->
+    <section
+      class="py-section-gap-mobile desktop:py-section-gap-desktop bg-surface-container-lowest/30"
+    >
+      <div class="max-w-container-max mx-auto px-gutter">
+        <div
+          class="flex flex-col md:flex-row md:items-end md:justify-between mb-16 gap-6"
+        >
+          <div>
+            <span
+              class="px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20 text-secondary font-label-md text-label-md uppercase mb-6 inline-block"
+              >Testimonials</span
+            >
+            <h2 class="font-headline-lg text-headline-lg text-on-background">
+              What Clients Say
+            </h2>
+          </div>
+          <div class="flex gap-4">
+            <button
+              class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300"
+              onclick="prevSlide()"
+            >
+              <span class="material-symbols-outlined">arrow_back</span>
+            </button>
+            <button
+              class="w-12 h-12 rounded-full border border-outline/30 flex items-center justify-center text-on-surface hover:bg-primary hover:text-on-primary transition-all duration-300"
+              onclick="nextSlide()"
+            >
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+        <div
+          class="flex transition-transform duration-500 ease-out gap-6 overflow-x-hidden md:overflow-visible"
+          id="testimonial-carousel"
+        >
+          <!-- Testimonial 1 -->
+          <div
+            class="min-w-full md:min-w-[calc(33.333%-16px)] glass-card p-8 rounded-3xl flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex gap-1 mb-6 text-tertiary">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+              <p class="text-body-lg font-body-lg italic text-on-surface mb-8">
+                "His ability to integrate complex AI models into such a
+                seamless, beautiful user interface is truly unmatched. A
+                game-changer for our workflow."
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img
+                alt="Client Headshot"
+                class="w-14 h-14 rounded-full object-cover border border-primary/20"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIAcpia26A0xTlLFAtY5HcuGi8VHyALyZ22tZz4XYVmb-GK81MIoBI3SyCYdcLo1wACSNLZwdrX5OKPZvRp6g-Y51fTcqiRnfqBcMvngmGy6_whrj0l0eem5OpBYyRh6wlJVS1EfI1tFFmBPWqsbC1UUnyUPafx2kvyvvA56LQkTp4AesQku7b-rDzaFmS4IJ3znDmflG8-STIPi-55MTR7BjJEWcS6V27KX7OJPYX9G2eAtDz9-r1X5GiNPQn30WQWT02W1vEHjk"
+              />
+              <div>
+                <h4 class="font-bold text-on-background">Marcus Thorne</h4>
+                <p class="text-label-md font-label-md text-outline">
+                  CTO, Nexus Dynamics
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 2 -->
+          <div
+            class="min-w-full md:min-w-[calc(33.333%-16px)] glass-card p-8 rounded-3xl flex flex-col justify-between border-t-2 border-t-primary/30"
+          >
+            <div>
+              <div class="flex gap-1 mb-6 text-tertiary">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+              <p class="text-body-lg font-body-lg italic text-on-surface mb-8">
+                "The vision he brought to our branding was exactly what we
+                needed to stand out in a saturated market. Pure technical
+                elegance."
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img
+                alt="Client Headshot"
+                class="w-14 h-14 rounded-full object-cover border border-primary/20"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIAcpia26A0xTlLFAtY5HcuGi8VHyALyZ22tZz4XYVmb-GK81MIoBI3SyCYdcLo1wACSNLZwdrX5OKPZvRp6g-Y51fTcqiRnfqBcMvngmGy6_whrj0l0eem5OpBYyRh6wlJVS1EfI1tFFmBPWqsbC1UUnyUPafx2kvyvvA56LQkTp4AesQku7b-rDzaFmS4IJ3znDmflG8-STIPi-55MTR7BjJEWcS6V27KX7OJPYX9G2eAtDz9-r1X5GiNPQn30WQWT02W1vEHjk"
+              />
+              <div>
+                <h4 class="font-bold text-on-background">Elena Rodriguez</h4>
+                <p class="text-label-md font-label-md text-outline">
+                  Founder, Bloom AI
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial 3 -->
+          <div
+            class="min-w-full md:min-w-[calc(33.333%-16px)] glass-card p-8 rounded-3xl flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex gap-1 mb-6 text-tertiary">
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined"
+                  style="font-variation-settings: &quot;FILL&quot; 1"
+                  >star</span
+                >
+              </div>
+              <p class="text-body-lg font-body-lg italic text-on-surface mb-8">
+                "Working with someone who understands both the math and the
+                design is rare. He delivered beyond our expectations on every
+                front."
+              </p>
+            </div>
+            <div class="flex items-center gap-4">
+              <img
+                alt="Client Headshot"
+                class="w-14 h-14 rounded-full object-cover border border-primary/20"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCZIAcpia26A0xTlLFAtY5HcuGi8VHyALyZ22tZz4XYVmb-GK81MIoBI3SyCYdcLo1wACSNLZwdrX5OKPZvRp6g-Y51fTcqiRnfqBcMvngmGy6_whrj0l0eem5OpBYyRh6wlJVS1EfI1tFFmBPWqsbC1UUnyUPafx2kvyvvA56LQkTp4AesQku7b-rDzaFmS4IJ3znDmflG8-STIPi-55MTR7BjJEWcS6V27KX7OJPYX9G2eAtDz9-r1X5GiNPQn30WQWT02W1vEHjk"
+              />
+              <div>
+                <h4 class="font-bold text-on-background">Jameson Wu</h4>
+                <p class="text-label-md font-label-md text-outline">
+                  Product Lead, Streamline
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Dots -->
+        <div class="flex justify-center mt-12 gap-2">
+          <div class="w-2 h-2 rounded-full bg-primary"></div>
+          <div class="w-2 h-2 rounded-full bg-outline/30"></div>
+          <div class="w-2 h-2 rounded-full bg-outline/30"></div>
+        </div>
+      </div>
+    </section>
+    <!-- Workflow Section -->
+    <section
+      class="py-section-gap-mobile desktop:py-section-gap-desktop relative"
+    >
+      <div class="max-w-container-max mx-auto px-gutter relative z-10">
+        <div class="flex flex-col items-center mb-20 text-center">
+          <span
+            class="px-4 py-1.5 rounded-full bg-tertiary/10 border border-tertiary/20 text-tertiary font-label-md text-label-md uppercase mb-6"
+            >Process</span
+          >
+          <h2
+            class="font-headline-lg text-headline-lg text-on-background max-w-2xl"
+          >
+            How I Work
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 relative">
+          <!-- Connective lines for desktop -->
+          <div
+            class="absolute top-1/2 left-0 w-full h-px bg-gradient-to-r from-transparent via-outline-variant/30 to-transparent -translate-y-1/2 hidden md:block"
+          ></div>
+          <!-- Discovery -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-primary/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl">lightbulb</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">Discovery</h3>
+            <p class="text-outline">
+              Defining the core problem, project goals, and target audience
+              through deep stakeholder alignment.
+            </p>
+          </div>
+          <!-- Research -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-secondary/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl">analytics</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">Research</h3>
+            <p class="text-outline">
+              Analyzing market trends, competitor landscapes, and existing data
+              to inform the strategic roadmap.
+            </p>
+          </div>
+          <!-- Planning -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-tertiary/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-tertiary/10 flex items-center justify-center text-tertiary mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >architecture</span
+              >
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">Planning</h3>
+            <p class="text-outline">
+              Structuring the technical architecture, data flow diagrams, and
+              user journey mapping.
+            </p>
+          </div>
+          <!-- Design & Dev -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-primary-fixed/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-primary-fixed/10 flex items-center justify-center text-primary-fixed mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl">code</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">
+              Design &amp; Dev
+            </h3>
+            <p class="text-outline">
+              Iterative cycles of UI creation and high-performance backend
+              coding with AI integration.
+            </p>
+          </div>
+          <!-- Testing -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-error/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-error/10 flex items-center justify-center text-error mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl">bug_report</span>
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">Testing</h3>
+            <p class="text-outline">
+              Rigorous quality assurance, edge-case debugging, and performance
+              optimization for all environments.
+            </p>
+          </div>
+          <!-- Launch -->
+          <div
+            class="glass-card p-10 rounded-[32px] group hover:border-secondary-container/50 transition-all duration-500 relative bg-surface-container-lowest/80"
+          >
+            <div
+              class="w-14 h-14 rounded-2xl bg-secondary-container/10 flex items-center justify-center text-secondary-container mb-6 group-hover:scale-110 transition-transform"
+            >
+              <span class="material-symbols-outlined text-3xl"
+                >rocket_launch</span
+              >
+            </div>
+            <h3 class="font-headline-md text-headline-md mb-4">Launch</h3>
+            <p class="text-outline">
+              Deployment, monitoring, and scale-up support to ensure a smooth
+              transition into production.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Bottom CTA Section -->
+    <section
+      class="py-section-gap-mobile desktop:py-section-gap-desktop relative overflow-hidden"
+    >
+      <!-- Background Glow Orb -->
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-[800px] h-96 bg-primary/10 blur-[120px] rounded-full pointer-events-none"
+      ></div>
+      <div class="max-w-container-max mx-auto px-gutter relative z-10">
+        <div
+          class="glass-card p-12 md:p-24 rounded-[48px] text-center flex flex-col items-center"
+        >
+          <h2
+            class="font-display-lg text-display-lg-mobile md:text-display-lg text-on-background mb-10 max-w-3xl"
+          >
+            Ready to Build Something Amazing?
+          </h2>
+          <div class="flex flex-col md:flex-row gap-6">
+            <a
+              class="px-10 py-5 bg-primary text-on-primary font-bold rounded-full hover:shadow-[0_0_30px_rgba(175,198,255,0.4)] hover:scale-105 transition-all duration-300 text-center flex items-center justify-center"
+              href="contact.html"
+            >
+              Let's Talk
+            </a>
+            <a
+              class="px-10 py-5 glass-card text-on-surface font-bold rounded-full hover:bg-white/10 transition-all duration-300 text-center flex items-center justify-center"
+              href="projects.html"
+            >
+              View Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer Mock (Required context) -->
+    <footer class="py-12 border-t border-outline-variant/20 bg-background">
+      <div
+        class="max-w-container-max mx-auto px-gutter flex flex-col md:flex-row justify-between items-center gap-8"
+      >
+        <div class="space-y-2 text-center md:text-left">
+          <a href="index.html" class="text-label-md font-bold text-primary hover:text-primary/80 transition-colors">YANDIAN.TECH</a>
+          <p class="text-label-md text-on-surface-variant">
+            © 2026 YANDIAN.TECH. Built with Precision &amp; Logic.
+          </p>
+        </div>
+        <div class="flex gap-8">
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Privacy Policy</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >Terms of Service</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >LinkedIn</a
+          >
+          <a
+            class="text-label-md text-on-surface-variant hover:text-primary transition-colors"
+            href="#"
+            >GitHub</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script>
+      // Simple Carousel Logic
+      let currentIdx = 0;
+      const carousel = document.getElementById("testimonial-carousel");
+      const totalSlides = 3; // On mobile
+
+      function nextSlide() {
+        currentIdx = (currentIdx + 1) % totalSlides;
+        updateCarousel();
+      }
+
+      function prevSlide() {
+        currentIdx = (currentIdx - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+      }
+
+      function updateCarousel() {
+        if (window.innerWidth < 768) {
+          const offset = currentIdx * 100;
+          carousel.style.transform = `translateX(-${offset}%)`;
+        }
+      }
+
+      // Handle Resize
+      window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+          carousel.style.transform = "none";
+        } else {
+          updateCarousel();
+        }
+      });
+
+      // Framer Motion like Scroll Reveal Effect (Vanilla implementation)
+      const observerOptions = {
+        threshold: 0.1,
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".glass-card").forEach((card) => {
+        card.style.opacity = "0";
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1)";
+        observer.observe(card);
+      });
+
+      // Mobile Menu Logic
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      if (menuBtn && overlay) {
+        menuBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-0', 'pointer-events-none');
+          overlay.classList.add('opacity-100');
+        });
+      }
+
+      if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      }
+
+      // Close mobile menu when a link is clicked
+      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      });
+    </script>
+    
+    <!-- Mobile Navigation Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+        <span class="material-symbols-outlined text-[36px]">close</span>
+      </button>
+      <nav class="flex flex-col items-center gap-8 text-center">
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
+        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+        Let's Talk
+      </a>
+    </div>
+  </body>
+</html>
