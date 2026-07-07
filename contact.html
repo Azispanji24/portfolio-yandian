@@ -686,34 +686,6 @@
           }
         }
       });
-
-      // Mobile Menu Logic
-      const menuBtn = document.getElementById('mobile-menu-btn');
-      const closeBtn = document.getElementById('mobile-menu-close');
-      const overlay = document.getElementById('mobile-menu-overlay');
-
-      if (menuBtn && overlay) {
-        menuBtn.addEventListener('click', () => {
-          overlay.classList.remove('opacity-0', 'pointer-events-none');
-          overlay.classList.add('opacity-100');
-        });
-      }
-
-      if (closeBtn && overlay) {
-        closeBtn.addEventListener('click', () => {
-          overlay.classList.remove('opacity-100');
-          overlay.classList.add('opacity-0', 'pointer-events-none');
-        });
-      }
-
-      // Close mobile menu when a link is clicked
-      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
-      mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          overlay.classList.remove('opacity-100');
-          overlay.classList.add('opacity-0', 'pointer-events-none');
-        });
-      });
     </script>
     
     <!-- Mobile Navigation Menu Overlay -->
@@ -734,5 +706,33 @@
         Let's Talk
       </a>
     </div>
+
+    <script>
+      // Mobile Menu Logic (runs after overlay is in DOM)
+      const menuBtn = document.getElementById('mobile-menu-btn');
+      const closeBtn = document.getElementById('mobile-menu-close');
+      const overlay = document.getElementById('mobile-menu-overlay');
+
+      if (menuBtn && overlay) {
+        menuBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-0', 'pointer-events-none');
+          overlay.classList.add('opacity-100');
+        });
+      }
+
+      if (closeBtn && overlay) {
+        closeBtn.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      }
+
+      overlay && overlay.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', () => {
+          overlay.classList.remove('opacity-100');
+          overlay.classList.add('opacity-0', 'pointer-events-none');
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1033,7 +1033,11 @@
         if (e.key === "Escape") closeModal();
       });
 
-      // Mobile Menu Logic
+    </script>
+
+
+    <script>
+      // Mobile Menu Logic (runs after overlay is in DOM)
       const menuBtn = document.getElementById('mobile-menu-btn');
       const closeBtn = document.getElementById('mobile-menu-close');
       const overlay = document.getElementById('mobile-menu-overlay');
@@ -1052,9 +1056,7 @@
         });
       }
 
-      // Close mobile menu when a link is clicked
-      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
-      mobileLinks.forEach(link => {
+      overlay && overlay.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
           overlay.classList.remove('opacity-100');
           overlay.classList.add('opacity-0', 'pointer-events-none');

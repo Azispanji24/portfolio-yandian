@@ -786,11 +786,8 @@
         updateCarousel();
       });
 
-      // Framer Motion like Scroll Reveal Effect (Vanilla implementation)
-      const observerOptions = {
-        threshold: 0.1,
-      };
-
+      // Scroll Reveal
+      const observerOptions = { threshold: 0.1 };
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
@@ -806,8 +803,11 @@
         card.style.transition = "all 0.8s cubic-bezier(0.17, 0.55, 0.55, 1)";
         observer.observe(card);
       });
+    </script>
 
-      // Mobile Menu Logic
+
+    <script>
+      // Mobile Menu Logic (runs after overlay is in DOM)
       const menuBtn = document.getElementById('mobile-menu-btn');
       const closeBtn = document.getElementById('mobile-menu-close');
       const overlay = document.getElementById('mobile-menu-overlay');
@@ -826,9 +826,7 @@
         });
       }
 
-      // Close mobile menu when a link is clicked
-      const mobileLinks = overlay ? overlay.querySelectorAll('nav a') : [];
-      mobileLinks.forEach(link => {
+      overlay && overlay.querySelectorAll('nav a').forEach(link => {
         link.addEventListener('click', () => {
           overlay.classList.remove('opacity-100');
           overlay.classList.add('opacity-0', 'pointer-events-none');
