@@ -161,11 +161,11 @@
       }
     </style>
   </head>
-  <body class="font-body-md text-body-md pt-24">
+  <body class="font-body-md text-body-md">
     <!-- Navigation Header -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
-      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      class="fixed top-3 left-4 right-4 md:top-4 md:left-1/2 md:-translate-x-1/2 z-50 flex items-center justify-between px-4 md:px-6 py-2.5 md:py-3 w-[calc(100%-2rem)] md:w-full md:max-w-container-max bg-surface/80 backdrop-blur-lg rounded-full border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+      <a href="index.html" class="text-lg md:text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
       <nav class="hidden md:flex items-center gap-8">
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
@@ -175,12 +175,12 @@
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="gallery.html">Gallery</a>
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="contact.html">Contact</a>
       </nav>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 md:gap-4">
         <a href="contact.html"
-          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+          class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
           Let's Talk
         </a>
-        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-2 rounded-full hover:bg-white/5">
           <span class="material-symbols-outlined text-[28px]">menu</span>
         </button>
       </div>
@@ -234,7 +234,7 @@
                 class="w-3 h-3 rounded-full bg-primary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(175,198,255,0.8)]"
               ></div>
             </div>
-            <div class="md:w-[45%] order-1 md:order-2"></div>
+            <div class="hidden md:block md:w-[45%] order-1 md:order-2"></div>
           </div>
           <!-- 2025 -->
           <div
@@ -262,7 +262,7 @@
                 class="w-3 h-3 rounded-full bg-secondary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(166,230,255,0.8)]"
               ></div>
             </div>
-            <div class="md:w-[45%] order-1 md:order-1"></div>
+            <div class="hidden md:block md:w-[45%] order-1 md:order-1"></div>
           </div>
           <!-- 2024 -->
           <div
@@ -292,7 +292,7 @@
                 class="w-3 h-3 rounded-full bg-tertiary group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(255,183,123,0.8)]"
               ></div>
             </div>
-            <div class="md:w-[45%] order-1 md:order-2"></div>
+            <div class="hidden md:block md:w-[45%] order-1 md:order-2"></div>
           </div>
           <!-- 2023 -->
           <div
@@ -324,7 +324,7 @@
                 class="w-3 h-3 rounded-full bg-primary-fixed group-hover:scale-125 transition-transform duration-300 shadow-[0_0_15px_rgba(217,226,255,0.8)]"
               ></div>
             </div>
-            <div class="md:w-[45%] order-1 md:order-1"></div>
+            <div class="hidden md:block md:w-[45%] order-1 md:order-1"></div>
           </div>
         </div>
       </div>
@@ -523,10 +523,10 @@
           </div>
         </div>
         <!-- Dots -->
-        <div class="flex justify-center mt-12 gap-2">
-          <div class="w-2 h-2 rounded-full bg-primary"></div>
-          <div class="w-2 h-2 rounded-full bg-outline/30"></div>
-          <div class="w-2 h-2 rounded-full bg-outline/30"></div>
+        <div id="carousel-dots" class="flex justify-center mt-12 gap-2">
+          <div class="w-2.5 h-2.5 rounded-full bg-primary cursor-pointer transition-all duration-300" onclick="goToSlide(0)"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-outline/30 cursor-pointer transition-all duration-300" onclick="goToSlide(1)"></div>
+          <div class="w-2.5 h-2.5 rounded-full bg-outline/30 cursor-pointer transition-all duration-300" onclick="goToSlide(2)"></div>
         </div>
       </div>
     </section>
@@ -719,11 +719,30 @@
         </div>
       </div>
     </footer>
+    <!-- Mobile Navigation Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+        <span class="material-symbols-outlined text-[36px]">close</span>
+      </button>
+      <nav class="flex flex-col items-center gap-8 text-center">
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
+        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+        Let's Talk
+      </a>
+    </div>
+
     <script>
       // Simple Carousel Logic
       let currentIdx = 0;
       const carousel = document.getElementById("testimonial-carousel");
-      const totalSlides = 3; // On mobile
+      const totalSlides = 3; 
 
       function nextSlide() {
         currentIdx = (currentIdx + 1) % totalSlides;
@@ -735,20 +754,36 @@
         updateCarousel();
       }
 
+      window.goToSlide = function(idx) {
+        currentIdx = idx;
+        updateCarousel();
+      }
+
       function updateCarousel() {
+        const dots = document.querySelectorAll("#carousel-dots > div");
+        if (dots.length > 0) {
+          dots.forEach((dot, index) => {
+            if (index === currentIdx) {
+              dot.classList.remove("bg-outline/30");
+              dot.classList.add("bg-primary");
+            } else {
+              dot.classList.remove("bg-primary");
+              dot.classList.add("bg-outline/30");
+            }
+          });
+        }
+
         if (window.innerWidth < 768) {
-          const offset = currentIdx * 100;
-          carousel.style.transform = `translateX(-${offset}%)`;
+          // Slide translation on mobile including gap (24px)
+          carousel.style.transform = `translateX(calc(-${currentIdx} * (100% + 24px)))`;
+        } else {
+          carousel.style.transform = "none";
         }
       }
 
       // Handle Resize
       window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768) {
-          carousel.style.transform = "none";
-        } else {
-          updateCarousel();
-        }
+        updateCarousel();
       });
 
       // Framer Motion like Scroll Reveal Effect (Vanilla implementation)
@@ -800,24 +835,5 @@
         });
       });
     </script>
-    
-    <!-- Mobile Navigation Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
-        <span class="material-symbols-outlined text-[36px]">close</span>
-      </button>
-      <nav class="flex flex-col items-center gap-8 text-center">
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
-        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
-      </nav>
-      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
-        Let's Talk
-      </a>
-    </div>
   </body>
 </html>

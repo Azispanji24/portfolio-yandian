@@ -192,9 +192,8 @@
   <body class="font-body-md text-body-md">
     <!-- Top Navigation Bar -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]"
-    >
-      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      class="fixed top-3 left-4 right-4 md:top-4 md:left-1/2 md:-translate-x-1/2 z-50 flex items-center justify-between px-4 md:px-6 py-2.5 md:py-3 w-[calc(100%-2rem)] md:w-full md:max-w-container-max bg-surface/80 backdrop-blur-lg rounded-full border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+      <a href="index.html" class="text-lg md:text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
       <nav class="hidden md:flex items-center gap-8">
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
@@ -204,12 +203,12 @@
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="gallery.html">Gallery</a>
         <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="contact.html">Contact</a>
       </nav>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 md:gap-4">
         <a href="contact.html"
-          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+          class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
           Let's Talk
         </a>
-        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-2 rounded-full hover:bg-white/5">
           <span class="material-symbols-outlined text-[28px]">menu</span>
         </button>
       </div>
@@ -380,28 +379,33 @@
                     class="text-on-surface-variant font-label-md text-xs uppercase tracking-widest pl-1"
                     >Monthly Budget</label
                   >
+                  <input type="hidden" name="budget" id="budgetInput" value="">
                   <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                     <button
-                      class="py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all focus:bg-primary-container/20 focus:border-primary"
+                      class="budget-btn py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all"
                       type="button"
+                      onclick="selectBudget(this, '$2k-$5k')"
                     >
                       $2k-$5k
                     </button>
                     <button
-                      class="py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all focus:bg-primary-container/20 focus:border-primary"
+                      class="budget-btn py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all"
                       type="button"
+                      onclick="selectBudget(this, '$5k-$10k')"
                     >
                       $5k-$10k
                     </button>
                     <button
-                      class="py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all focus:bg-primary-container/20 focus:border-primary"
+                      class="budget-btn py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all"
                       type="button"
+                      onclick="selectBudget(this, '$10k-$25k')"
                     >
                       $10k-$25k
                     </button>
                     <button
-                      class="py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all focus:bg-primary-container/20 focus:border-primary"
+                      class="budget-btn py-2 px-4 rounded-lg border border-outline-variant/30 bg-surface-container-lowest hover:border-primary/50 text-sm transition-all"
                       type="button"
+                      onclick="selectBudget(this, '$25k+')"
                     >
                       $25k+
                     </button>
@@ -613,6 +617,17 @@
       // Update Copyright Year
       document.getElementById("year").textContent = new Date().getFullYear();
 
+      // Budget Selection Logic
+      window.selectBudget = function(selectedBtn, value) {
+        document.querySelectorAll(".budget-btn").forEach((btn) => {
+          btn.classList.remove("bg-primary/20", "border-primary", "text-primary");
+          btn.classList.add("bg-surface-container-lowest", "border-outline-variant/30");
+        });
+        selectedBtn.classList.remove("bg-surface-container-lowest", "border-outline-variant/30");
+        selectedBtn.classList.add("bg-primary/20", "border-primary", "text-primary");
+        document.getElementById("budgetInput").value = value;
+      }
+
       // Contact Form Submission Micro-interaction
       const contactForm = document.getElementById("contactForm");
       const submitBtn = document.getElementById("submitBtn");
@@ -640,6 +655,11 @@
           );
 
           contactForm.reset();
+          document.querySelectorAll(".budget-btn").forEach((btn) => {
+            btn.classList.remove("bg-primary/20", "border-primary", "text-primary");
+            btn.classList.add("bg-surface-container-lowest", "border-outline-variant/30");
+          });
+          document.getElementById("budgetInput").value = "";
 
           setTimeout(() => {
             // Reset

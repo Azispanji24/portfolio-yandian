@@ -220,9 +220,9 @@
   <div class="glow-orb bg-secondary-container w-[400px] h-[400px] bottom-[-50px] right-[-50px]"></div>
   <!-- Navigation Header -->
   <header
-    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+    class="fixed top-3 left-4 right-4 md:top-4 md:left-1/2 md:-translate-x-1/2 z-50 flex items-center justify-between px-4 md:px-6 py-2.5 md:py-3 w-[calc(100%-2rem)] md:w-full md:max-w-container-max bg-surface/80 backdrop-blur-lg rounded-full border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
     <a href="index.html"
-      class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      class="text-lg md:text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
     <nav class="hidden md:flex items-center gap-8">
       <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md"
         href="index.html">Home</a>
@@ -239,124 +239,124 @@
       <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform"
         href="contact.html">Contact</a>
     </nav>
-    <div class="flex items-center gap-4">
+    <div class="flex items-center gap-2 md:gap-4">
       <a href="contact.html"
-        class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+        class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
         Let's Talk
       </a>
       <button id="mobile-menu-btn"
-        class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-2 rounded-full hover:bg-white/5">
         <span class="material-symbols-outlined text-[28px]">menu</span>
       </button>
     </div>
   </header>
   <!-- Main Content -->
-  <main class="relative w-full max-w-container-max mx-auto px-gutter">
+  <main class="relative w-full max-w-container-max mx-auto px-4 md:px-gutter">
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center pt-32 md:pt-0">
-      <div class="grid grid-cols-1 md:grid-cols-12 gap-16 items-center w-full">
+    <section class="min-h-screen flex items-center pt-24 md:pt-0 pb-12 md:pb-0">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-16 items-center w-full">
         <!-- Left Side: Content -->
-        <div class="md:col-span-7 flex flex-col items-start gap-8 z-10">
+        <div class="md:col-span-7 flex flex-col items-start gap-6 md:gap-8 z-10 pt-8 md:pt-0">
           <div
-            class="fade-up animate-in px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-label-md font-label-md tracking-wider flex items-center gap-2">
+            class="fade-up animate-in px-4 py-1.5 rounded-full border border-primary/30 bg-primary/10 text-primary text-xs md:text-label-md font-label-md tracking-wider flex items-center gap-2">
             <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
             AI Engineer • Designer • Video Editor
           </div>
           <h1
-            class="fade-up animate-in delay-1 text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface max-w-[90%] leading-[1.1]">
+            class="fade-up animate-in delay-1 text-[36px] sm:text-display-lg-mobile md:text-display-lg font-display-lg text-on-surface max-w-[100%] md:max-w-[90%] leading-[1.15] md:leading-[1.1]">
             Building Intelligent Experiences Through <span class="text-primary">AI</span>, Design &amp; <span
               class="text-secondary-container">Creativity</span>
           </h1>
           <p
-            class="fade-up animate-in delay-2 text-body-lg font-body-lg text-on-surface-variant max-w-[80%] leading-relaxed">
+            class="fade-up animate-in delay-2 text-base md:text-body-lg font-body-lg text-on-surface-variant max-w-full md:max-w-[80%] leading-relaxed">
             A highly skilled creative technologist crafting impactful digital products at the intersection of logic and
             imagination.
           </p>
-          <div class="fade-up animate-in delay-3 flex flex-wrap gap-4 pt-4">
+          <div class="fade-up animate-in delay-3 flex flex-col sm:flex-row gap-3 md:gap-4 pt-2 w-full sm:w-auto">
             <a href="projects.html"
-              class="magnetic-btn bg-primary text-on-primary px-8 py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
+              class="magnetic-btn bg-primary text-on-primary px-8 py-3.5 md:py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-primary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
               View Projects
               <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
             </a>
             <a href="assets/cv/cvyanun.pdf" download="CV_Yandian.pdf"
-              class="magnetic-btn bg-secondary-container text-on-secondary-container px-8 py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-secondary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
+              class="magnetic-btn bg-secondary-container text-on-secondary-container px-8 py-3.5 md:py-4 rounded-xl font-label-md text-label-md font-bold flex items-center gap-2 shadow-xl shadow-secondary/20 hover:brightness-110 active:scale-95 transition-all text-center justify-center">
               Download CV
               <span class="material-symbols-outlined text-[20px]">download</span>
             </a>
             <a href="contact.html"
-              class="magnetic-btn glass-card px-8 py-4 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:bg-white/10 transition-all active:scale-95 text-center flex items-center justify-center">
+              class="magnetic-btn glass-card px-8 py-3.5 md:py-4 rounded-xl font-label-md text-label-md font-bold text-on-surface hover:bg-white/10 transition-all active:scale-95 text-center flex items-center justify-center">
               Contact Me
             </a>
           </div>
           <!-- Stats Row -->
           <div
-            class="fade-up animate-in delay-3 grid grid-cols-3 gap-8 mt-12 pt-12 border-t border-outline-variant/20 w-full max-w-xl">
+            class="fade-up animate-in delay-3 grid grid-cols-3 gap-4 md:gap-8 mt-6 md:mt-12 pt-6 md:pt-12 border-t border-outline-variant/20 w-full max-w-xl">
             <div class="flex flex-col gap-1">
-              <span class="text-headline-md font-headline-md text-on-surface">15+</span>
-              <span class="text-label-md font-label-md text-on-surface-variant">Projects</span>
+              <span class="text-2xl md:text-headline-md font-headline-md text-on-surface">15+</span>
+              <span class="text-xs md:text-label-md font-label-md text-on-surface-variant">Projects</span>
             </div>
             <div class="flex flex-col gap-1">
-              <span class="text-headline-md font-headline-md text-on-surface">3+</span>
-              <span class="text-label-md font-label-md text-on-surface-variant">Years Exp.</span>
+              <span class="text-2xl md:text-headline-md font-headline-md text-on-surface">3+</span>
+              <span class="text-xs md:text-label-md font-label-md text-on-surface-variant">Years Exp.</span>
             </div>
             <div class="flex flex-col gap-1">
-              <span class="text-headline-md font-headline-md text-on-surface">20+</span>
-              <span class="text-label-md font-label-md text-on-surface-variant">Clients</span>
+              <span class="text-2xl md:text-headline-md font-headline-md text-on-surface">20+</span>
+              <span class="text-xs md:text-label-md font-label-md text-on-surface-variant">Clients</span>
             </div>
           </div>
         </div>
         <!-- Right Side: Abstract Visual -->
-        <div class="md:col-span-5 relative h-[500px] md:h-[600px] flex items-center justify-center">
+        <div class="md:col-span-5 relative h-[420px] md:h-[600px] flex items-center justify-center mt-8 md:mt-0">
           <div class="relative w-full h-full flex items-center justify-center">
             <!-- Soft Blue Glow Background -->
             <div
-              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[400px] bg-primary/20 blur-[100px] rounded-full z-0">
+              class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[220px] md:w-[300px] h-[300px] md:h-[400px] bg-primary/20 blur-[80px] md:blur-[100px] rounded-full z-0">
             </div>
 
             <!-- Main Portrait Frame -->
-            <div class="relative z-10 gradient-border p-2 rounded-[40px] animate-float">
-              <div class="glass-card overflow-hidden rounded-[32px] w-[280px] h-[380px] md:w-[320px] md:h-[440px]">
+            <div class="relative z-10 gradient-border p-1.5 md:p-2 rounded-[32px] md:rounded-[40px] animate-float">
+              <div class="glass-card overflow-hidden rounded-[26px] md:rounded-[32px] w-[240px] h-[320px] md:w-[320px] md:h-[440px]">
                 <img src="assets/img/yanunfoto.jpeg" alt="Creative Technologist Portrait"
                   class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
               </div>
             </div>
 
-            <!-- Floating Expertise Cards -->
+            <!-- Floating Expertise Cards - Hidden or simplified on mobile to prevent clutter -->
             <!-- AI Card -->
             <div
-              class="glass-card absolute top-10 -left-4 md:-left-10 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-1 shadow-xl border-white/10">
-              <div class="w-10 h-10 rounded-xl bg-primary/20 flex items-center justify-center text-primary">
-                <span class="material-symbols-outlined text-2xl">psychology</span>
+              class="glass-card absolute top-6 -left-2 md:top-10 md:-left-10 p-2.5 md:p-4 rounded-xl md:rounded-2xl flex items-center gap-2 md:gap-3 z-20 animate-float delay-1 shadow-xl border-white/10 scale-90 md:scale-100">
+              <div class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-primary/20 flex items-center justify-center text-primary">
+                <span class="material-symbols-outlined text-xl md:text-2xl">psychology</span>
               </div>
-              <span class="font-label-md text-label-md text-on-surface">AI Engineer</span>
+              <span class="font-label-md text-xs md:text-label-md text-on-surface">AI Engineer</span>
             </div>
 
             <!-- Design Card -->
             <div
-              class="glass-card absolute top-1/2 -right-4 md:-right-8 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-3 shadow-xl border-white/10">
+              class="glass-card absolute top-1/2 -right-2 md:-right-8 p-2.5 md:p-4 rounded-xl md:rounded-2xl flex items-center gap-2 md:gap-3 z-20 animate-float delay-3 shadow-xl border-white/10 scale-90 md:scale-100">
               <div
-                class="w-10 h-10 rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary-container">
-                <span class="material-symbols-outlined text-2xl">palette</span>
+                class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-secondary-container/20 flex items-center justify-center text-secondary-container">
+                <span class="material-symbols-outlined text-xl md:text-2xl">palette</span>
               </div>
-              <span class="font-label-md text-label-md text-on-surface">UI Designer</span>
+              <span class="font-label-md text-xs md:text-label-md text-on-surface">UI Designer</span>
             </div>
 
             <!-- Video Card -->
             <div
-              class="glass-card absolute bottom-10 -left-2 md:-left-6 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-5 shadow-xl border-white/10">
-              <div class="w-10 h-10 rounded-xl bg-tertiary/20 flex items-center justify-center text-tertiary">
-                <span class="material-symbols-outlined text-2xl">movie</span>
+              class="glass-card absolute bottom-6 -left-2 md:bottom-10 md:-left-6 p-2.5 md:p-4 rounded-xl md:rounded-2xl flex items-center gap-2 md:gap-3 z-20 animate-float delay-5 shadow-xl border-white/10 scale-90 md:scale-100">
+              <div class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-tertiary/20 flex items-center justify-center text-tertiary">
+                <span class="material-symbols-outlined text-xl md:text-2xl">movie</span>
               </div>
-              <span class="font-label-md text-label-md text-on-surface">Video Editor</span>
+              <span class="font-label-md text-xs md:text-label-md text-on-surface">Video Editor</span>
             </div>
 
             <!-- Code Card -->
             <div
-              class="glass-card absolute -bottom-4 right-10 p-4 rounded-2xl flex items-center gap-3 z-20 animate-float delay-2 shadow-xl border-white/10">
-              <div class="w-10 h-10 rounded-xl bg-on-surface/10 flex items-center justify-center text-on-surface">
-                <span class="material-symbols-outlined text-2xl">terminal</span>
+              class="glass-card absolute -bottom-2 right-8 md:-bottom-4 md:right-10 p-2.5 md:p-4 rounded-xl md:rounded-2xl flex items-center gap-2 md:gap-3 z-20 animate-float delay-2 shadow-xl border-white/10 scale-90 md:scale-100">
+              <div class="w-8 h-8 md:w-10 md:h-10 rounded-lg md:rounded-xl bg-on-surface/10 flex items-center justify-center text-on-surface">
+                <span class="material-symbols-outlined text-xl md:text-2xl">terminal</span>
               </div>
-              <span class="font-label-md text-label-md text-on-surface">Full Stack</span>
+              <span class="font-label-md text-xs md:text-label-md text-on-surface">Full Stack</span>
             </div>
           </div>
         </div>
@@ -456,7 +456,7 @@
         <p class="fade-up delay-1 text-body-lg text-on-surface-variant animate-in">The tools and frameworks I use to
           bring complex ideas to life with performance and scale.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-5 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 md:gap-8">
         <!-- AI Stack -->
         <div class="fade-up delay-1 space-y-6 animate-in">
           <h3 class="text-primary font-bold tracking-widest text-label-md uppercase">Artificial Intelligence</h3>
@@ -533,7 +533,7 @@
         <p class="fade-up delay-1 text-body-lg text-on-surface-variant animate-in">Bespoke digital solutions tailored
           for the next generation of web and media.</p>
       </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         <!-- Service 1 -->
         <div class="fade-up service-card gradient-border p-8 rounded-[32px] flex flex-col gap-6 animate-in">
           <div class="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center text-primary">

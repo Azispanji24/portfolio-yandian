@@ -202,8 +202,8 @@
   <body class="font-body-md text-on-surface selection:bg-primary/30">
     <!-- TopNavBar -->
     <header
-      class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-3 w-full max-w-container-max mx-auto bg-surface/60 backdrop-blur-lg rounded-full mt-4 border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
-      <a href="index.html" class="text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
+      class="fixed top-3 left-4 right-4 md:top-4 md:left-1/2 md:-translate-x-1/2 z-50 flex items-center justify-between px-4 md:px-6 py-2.5 md:py-3 w-[calc(100%-2rem)] md:w-full md:max-w-container-max bg-surface/80 backdrop-blur-lg rounded-full border border-outline-variant/30 shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+      <a href="index.html" class="text-lg md:text-headline-md font-headline-md font-bold text-on-surface tracking-tighter hover:text-primary transition-colors">YANDIAN.TECH</a>
       <nav class="hidden md:flex items-center gap-8">
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html">Home</a>
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="index.html#about">About</a>
@@ -213,12 +213,12 @@
         <a class="text-primary font-bold border-b-2 border-primary pb-1 font-label-md text-label-md" href="gallery.html">Gallery</a>
         <a class="text-on-surface-variant hover:text-on-surface transition-colors duration-300 font-label-md text-label-md hover:scale-105 transition-transform" href="contact.html">Contact</a>
       </nav>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-2 md:gap-4">
         <a href="contact.html"
-          class="bg-primary-container text-on-primary-container px-6 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
+          class="hidden sm:inline-flex bg-primary-container text-on-primary-container px-5 py-2 rounded-full font-label-md text-label-md font-bold hover:scale-105 active:scale-95 transition-all duration-300 shadow-lg shadow-primary/20">
           Let's Talk
         </a>
-        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center">
+        <button id="mobile-menu-btn" class="md:hidden text-on-surface hover:text-primary transition-colors focus:outline-none flex items-center justify-center p-2 rounded-full hover:bg-white/5">
           <span class="material-symbols-outlined text-[28px]">menu</span>
         </button>
       </div>
@@ -298,6 +298,7 @@
           <!-- Item 1 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="ui"
             onclick="openGalleryModal('Modern Fintech App', 'ui')"
           >
             <div
@@ -319,6 +320,7 @@
           <!-- Item 2 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="branding"
             onclick="openGalleryModal('Luxury Watch Branding', 'branding')"
           >
             <div
@@ -340,6 +342,7 @@
           <!-- Item 3 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="illustration"
             onclick="
               openGalleryModal('Abstract 3D Illustration', 'illustration')
             "
@@ -365,6 +368,7 @@
           <!-- Item 4 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="social"
             onclick="openGalleryModal('Digital Agency Poster', 'social')"
           >
             <div
@@ -388,6 +392,7 @@
           <!-- Item 5 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="ui"
             onclick="openGalleryModal('SaaS Dashboard', 'ui')"
           >
             <div
@@ -409,6 +414,7 @@
           <!-- Item 6 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="social"
             onclick="openGalleryModal('Minimalist Social Campaign', 'social')"
           >
             <div
@@ -432,6 +438,7 @@
           <!-- Item 7 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="illustration"
             onclick="openGalleryModal('AI Vision Concept', 'illustration')"
           >
             <div
@@ -455,6 +462,7 @@
           <!-- Item 8 -->
           <div
             class="masonry-item group cursor-pointer"
+            data-category="ui"
             onclick="openGalleryModal('Crypto Wallet Mobile', 'ui')"
           >
             <div
@@ -501,6 +509,7 @@
             <div class="flex gap-4">
               <button
                 class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all group"
+                onclick="scrollVideos('prev')"
               >
                 <span
                   class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
@@ -509,6 +518,7 @@
               </button>
               <button
                 class="w-12 h-12 rounded-full border border-outline-variant/30 flex items-center justify-center hover:bg-primary/10 hover:border-primary transition-all group"
+                onclick="scrollVideos('next')"
               >
                 <span
                   class="material-symbols-outlined text-on-surface-variant group-hover:text-primary"
@@ -518,11 +528,12 @@
             </div>
           </div>
           <div
-            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 reveal-up"
+            id="video-container"
+            class="flex gap-8 overflow-x-auto snap-x snap-mandatory scrollbar-none scroll-smooth pb-6 w-full"
           >
             <!-- Video Card 1 -->
             <div
-              class="group cursor-pointer"
+              class="min-w-full md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-start group cursor-pointer flex-shrink-0"
               onclick="openVideoModal('Corporate Brand Video')"
             >
               <div
@@ -558,7 +569,7 @@
             </div>
             <!-- Video Card 2 -->
             <div
-              class="group cursor-pointer"
+              class="min-w-full md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-start group cursor-pointer flex-shrink-0"
               onclick="openVideoModal('Product Commercial')"
             >
               <div
@@ -595,7 +606,7 @@
             </div>
             <!-- Video Card 3 -->
             <div
-              class="group cursor-pointer"
+              class="min-w-full md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-start group cursor-pointer flex-shrink-0"
               onclick="openVideoModal('Travel Cinematic')"
             >
               <div
@@ -632,7 +643,7 @@
             </div>
             <!-- Additional items for responsive grid -->
             <div
-              class="group cursor-pointer hidden md:block"
+              class="min-w-full md:min-w-[calc(50%-16px)] lg:min-w-[calc(33.333%-22px)] snap-start group cursor-pointer flex-shrink-0"
               onclick="openVideoModal('Educational Content')"
             >
               <div
@@ -889,6 +900,25 @@
         </div>
       </div>
     </div>
+    <!-- Mobile Navigation Menu Overlay -->
+    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
+      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
+        <span class="material-symbols-outlined text-[36px]">close</span>
+      </button>
+      <nav class="flex flex-col items-center gap-8 text-center">
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
+        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
+        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
+      </nav>
+      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
+        Let's Talk
+      </a>
+    </div>
+
     <script>
       // Intersection Observer for Scroll Reveals
       const observerOptions = {
@@ -910,6 +940,8 @@
       // Filter Functionality
       document.querySelectorAll(".filter-btn").forEach((btn) => {
         btn.addEventListener("click", function () {
+          const filterValue = this.getAttribute("data-filter");
+
           document
             .querySelectorAll(".filter-btn")
             .forEach((b) =>
@@ -940,21 +972,43 @@
             "text-on-surface-variant",
           );
 
-          // Masonry filter animation placeholder
+          // Animate and filter Masonry items
           const items = document.querySelectorAll(".masonry-item");
           items.forEach((item) => {
-            item.style.opacity = "0";
-            item.style.transform = "scale(0.9)";
-            setTimeout(() => {
-              item.style.opacity = "1";
-              item.style.transform = "scale(1)";
-            }, 300);
+            const category = item.getAttribute("data-category");
+            item.style.transition = "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)";
+            
+            if (filterValue === "all" || category === filterValue) {
+              item.style.display = "block";
+              setTimeout(() => {
+                item.style.opacity = "1";
+                item.style.transform = "scale(1)";
+              }, 50);
+            } else {
+              item.style.opacity = "0";
+              item.style.transform = "scale(0.95)";
+              setTimeout(() => {
+                item.style.display = "none";
+              }, 400);
+            }
           });
         });
       });
 
+      // Video Carousel Scroll Logic
+      window.scrollVideos = function(direction) {
+        const container = document.getElementById("video-container");
+        if (!container) return;
+        const scrollAmount = container.clientWidth * 0.8;
+        if (direction === "prev") {
+          container.scrollBy({ left: -scrollAmount, behavior: "smooth" });
+        } else {
+          container.scrollBy({ left: scrollAmount, behavior: "smooth" });
+        }
+      };
+
       // Modal Controls
-      function openGalleryModal(title, category) {
+      window.openGalleryModal = function(title, category) {
         document.getElementById("modalTitle").innerText = title;
         document.getElementById("modalCategory").innerText =
           category.toUpperCase();
@@ -962,13 +1016,13 @@
         document.body.style.overflow = "hidden";
       }
 
-      function openVideoModal(title) {
+      window.openVideoModal = function(title) {
         document.getElementById("videoTitle").innerText = title;
         document.getElementById("videoModal").classList.remove("hidden");
         document.body.style.overflow = "hidden";
       }
 
-      function closeModal() {
+      window.closeModal = function() {
         document.getElementById("galleryModal").classList.add("hidden");
         document.getElementById("videoModal").classList.add("hidden");
         document.body.style.overflow = "auto";
@@ -1007,24 +1061,5 @@
         });
       });
     </script>
-    
-    <!-- Mobile Navigation Menu Overlay -->
-    <div id="mobile-menu-overlay" class="fixed inset-0 z-[100] bg-background/95 backdrop-blur-2xl flex flex-col items-center justify-center opacity-0 pointer-events-none transition-all duration-300">
-      <button id="mobile-menu-close" class="absolute top-6 right-8 text-on-surface hover:text-primary transition-colors focus:outline-none">
-        <span class="material-symbols-outlined text-[36px]">close</span>
-      </button>
-      <nav class="flex flex-col items-center gap-8 text-center">
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html">Home</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#about">About</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="experience.html">Experience</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="projects.html">Projects</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="index.html#services">Services</a>
-        <a class="text-primary font-bold text-2xl font-headline-md transition-colors" href="gallery.html">Gallery</a>
-        <a class="text-on-surface-variant hover:text-primary text-2xl font-headline-md transition-colors" href="contact.html">Contact</a>
-      </nav>
-      <a href="contact.html" class="mt-12 bg-primary-container text-on-primary-container px-8 py-3 rounded-full font-label-md text-label-md font-bold shadow-lg shadow-primary/20">
-        Let's Talk
-      </a>
-    </div>
   </body>
 </html>
